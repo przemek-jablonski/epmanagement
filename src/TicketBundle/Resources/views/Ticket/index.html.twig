@@ -1,0 +1,57 @@
+{#
+{% extends 'EventBundle::layout.html.twig' %}
+#}
+{% extends 'TicketBundle::layout.html.twig' %}
+
+{% block body %}
+
+    <section class="events">
+        <header id="menu">
+            <a class="button" href="{{ path('ticketcrud_new') }}">create new Ticket</a>
+        </header>
+        {% for ticket in tickets %}
+            <article>
+                {#
+                <header class="map-container">
+                    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.location | url_encode }}&markers=color:red%7Ccolor:red%7C{{ entity.location | url_encode }}&zoom=14&size=150x150&maptype=roadmap&sensor=false" />
+                </header>
+                #}
+                <section>
+                    <h3>
+                        <a href="{{ path('ticketcrud_new', {'id': ticket.id}) }}">{{ ticket.name }}</a>
+                    </h3>
+
+                    <dl>
+                        <dt>Ticket ID:</dt>
+                        <dd>{{ ticket.id }}</dd>
+
+                        <dt>Name:</dt>
+                        <dd>{{ ticket.name }}</dd>
+
+                        <dt>Desc:</dt>
+                        <dd>{{ ticket.description }}</dd>
+
+                        <dt>Creation:</dt>
+                        <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
+
+                        <dt>Deadline:</dt>
+                        <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                        <dt>Reporter:</dt>
+                        <dd>{{ ticket.userCreated }}</dd>
+
+                        <dt>Assignee:</dt>
+                        <dd>{{ ticket.userAssigned }}</dd>
+
+                        <dt>Project:</dt>
+                        <dd>{{ ticket.project }}</dd>
+
+                        <dt>Sprint:</dt>
+                        <dd>{{ ticket.numberPoints }}</dd>
+
+                    </dl>
+                </section>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

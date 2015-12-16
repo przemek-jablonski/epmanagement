@@ -1,0 +1,24 @@
+ticketcrud_index:
+    path:     /
+    defaults: { _controller: "TicketBundle:ticket:index" }
+    methods:  GET
+
+ticketcrud_show:
+    path:     /{id}/show
+    defaults: { _controller: "TicketBundle:ticket:show" }
+    methods:  GET
+
+ticketcrud_new:
+    path:     /new
+    defaults: { _controller: "TicketBundle:ticket:new" }
+    methods:  [GET, POST]
+
+ticketcrud_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "TicketBundle:ticket:edit" }
+    methods:  [GET, POST]
+
+ticketcrud_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "TicketBundle:ticket:delete" }
+    methods:  DELETE

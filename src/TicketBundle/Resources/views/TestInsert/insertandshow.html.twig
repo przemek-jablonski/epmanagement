@@ -1,0 +1,16 @@
+
+
+{% block title %} (test) insertAndShow Ticket{% endblock %}
+
+what was added:
+<br><br>
+DATABASE ADDITION:
+<br><strong>id:</strong> {{ databaseAddition.id }}
+<br><strong>name:</strong> {{ databaseAddition.name }}
+<br><strong>desc:</strong> {{ databaseAddition.description }}
+<br><strong>date1:</strong> {{ databaseAddition.dateCreation | date("Y-m-d H:i:s") }}
+<br><strong>date2:</strong> {{ databaseAddition.dateDeadline | date("Y-m-d H:i:s")  }}
+<br><strong>reporter:</strong>  {{ databaseAddition.userCreated }}
+<br><strong>assignee:</strong>  {{ databaseAddition.userAssigned }}
+<br><strong>project:</strong>  {{ databaseAddition.project}}
+<br><strong>sprintPts:</strong>  {{ databaseAddition.numberPoints }}

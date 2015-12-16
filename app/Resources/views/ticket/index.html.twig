@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>ticket list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Usercreated</th>
+                <th>Userassigned</th>
+                <th>Datecreation</th>
+                <th>Datedeadline</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Numberpoints</th>
+                <th>Project</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ticket in tickets %}
+            <tr>
+                <td><a href="{{ path('ticketcrud_show', { 'id': ticket.id }) }}">{{ ticket.id }}</a></td>
+                <td>{{ ticket.userCreated }}</td>
+                <td>{{ ticket.userAssigned }}</td>
+                <td>{% if ticket.dateCreation %}{{ ticket.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if ticket.dateDeadline %}{{ ticket.dateDeadline|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ ticket.name }}</td>
+                <td>{{ ticket.description }}</td>
+                <td>{{ ticket.numberPoints }}</td>
+                <td>{{ ticket.project }}</td>
+                <td>{{ ticket.status }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('ticketcrud_show', { 'id': ticket.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('ticketcrud_edit', { 'id': ticket.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('ticketcrud_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
