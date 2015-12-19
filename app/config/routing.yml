@@ -1,7 +1,11 @@
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ticket:
     resource: "@TicketBundle/Resources/config/routing.yml"
-    prefix:   /ticket/
+    prefix:   /
 
-start:
-    resource: "@StartBundle/Resources/config/routing.yml"
-    prefix:   /start/
+#start:
+#    resource: "@StartBundle/Resources/config/routing.yml"
+#    prefix:   /start/
