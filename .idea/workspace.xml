@@ -57,7 +57,7 @@
           <file leaf-file-name="ticketController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.5">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
                   <folding>
                     <element signature="e#43#88#0#PHP" expanded="true" />
@@ -69,7 +69,7 @@
           <file leaf-file-name="ticketType.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.625">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
                   <folding>
                     <element signature="e#37#77#0#PHP" expanded="true" />
@@ -95,12 +95,9 @@
           <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.045592707">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-                  <folding>
-                    <element signature="e#452#467#0#Twig" expanded="true" />
-                    <element signature="e#1028#1043#0#Twig" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -108,11 +105,9 @@
           <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-9.375">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
                   <folding>
-                    <element signature="e#169#185#0#Twig" expanded="true" />
-                    <element signature="e#438#453#0#Twig" expanded="true" />
                     <element signature="e#1392#1907#0#Twig" expanded="false" />
                   </folding>
                 </state>
@@ -122,13 +117,9 @@
           <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/sample/Event/edit.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#12#41#0#Twig" expanded="true" />
-                    <element signature="e#178#194#0#Twig" expanded="true" />
-                    <element signature="e#278#293#0#Twig" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -899,9 +890,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#276#291#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,13 +993,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bootstrap.php.cache">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php">
@@ -1107,7 +1095,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="26" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1165,10 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-49.916668">
           <caret line="92" column="25" selection-start-line="44" selection-start-column="20" selection-end-line="92" selection-end-column="25" />
-          <folding>
-            <element signature="e#12#42#0#Twig" expanded="false" />
-            <element signature="e#179#195#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1176,9 +1159,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.387538">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,11 +1172,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375">
+        <state vertical-scroll-proportion="0.0">
           <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <element signature="e#169#185#0#Twig" expanded="true" />
-            <element signature="e#438#453#0#Twig" expanded="true" />
             <element signature="e#1392#1907#0#Twig" expanded="false" />
           </folding>
         </state>
@@ -1204,13 +1182,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sample/Event/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#12#41#0#Twig" expanded="true" />
-            <element signature="e#178#194#0#Twig" expanded="true" />
-            <element signature="e#278#293#0#Twig" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1218,13 +1192,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="76" column="49" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="49" />
           <folding>
             <element signature="e#43#88#0#PHP" expanded="true" />
@@ -1234,7 +1207,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#37#77#0#PHP" expanded="true" />
@@ -1246,9 +1219,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625">
           <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="e#276#291#0#Twig" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1278,12 +1248,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.045592707">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding>
-            <element signature="e#452#467#0#Twig" expanded="true" />
-            <element signature="e#1028#1043#0#Twig" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
