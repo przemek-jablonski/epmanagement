@@ -3,8 +3,11 @@
 {% block body %}
 
     <section class="events">
+
         <header id="menu">
-            <a class="button" href="{{ path('ticketcrud_new') }}">create new Ticket</a>
+            <h1>TicketList:</h1>
+            <a class="button" href="{{ path('ticketcrud_new') }}">create new ticket</a>
+            <a class="button" href="{{ path('logout') }}">logout</a>
         </header>
         {% for ticket in tickets %}
             <article>
@@ -15,7 +18,7 @@
                 #}
                 <section>
                     <h3>
-                        <a href="{{ path('ticketcrud_new', {'id': ticket.id}) }}">{{ ticket.name }}</a>
+                        <a href="{{ path('ticketcrud_edit', {'id': ticket.id}) }}">{{ ticket.name }}</a>
                     </h3>
 
                     <dl>
@@ -45,6 +48,9 @@
 
                         <dt>Sprint:</dt>
                         <dd>{{ ticket.numberPoints }}</dd>
+
+                        <dt>Status:</dt>
+                        <dd>{{ ticket.status }}</dd>
 
                     </dl>
                 </section>

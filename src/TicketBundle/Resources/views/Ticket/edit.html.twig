@@ -4,23 +4,77 @@
     <section class="event-show event-edit">
         <header id="menu">
             <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to all tickets</a>
-            <a class="link" href="{{ path('ticketcrud_show', {'id': entity.id}) }}">show this ticket</a>
+            <a class="link" href="{{ path('ticketcrud_show', {'id': ticket.id}) }}">show this ticket</a>
         </header>
 
         <article>
-            <header class="map-container">
-
-            </header>
             <section>
                 {# the opening <form> tag #}
                 {{ form_start(edit_form) }}
                     {{ form_errors(edit_form) }}
-                    <h1>
-                        {{ form_errors(edit_form.name) }}
-                        {{ form_widget(edit_form.name) }}
-                    </h1>
+                <h1>
+                    <dr>ticket name:</dr>
+                    <hr>
 
+                </h1>
                     <dl>
+
+                        <dd>
+                            {{ form_errors(edit_form.name) }}
+                            {{ form_widget(edit_form.name) }}
+                        </dd>
+                        <dt>description:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.description) }}
+                            {{ form_widget(edit_form.description) }}
+                        </dd>
+
+                        <dt>Creation:</dt>
+                       {# <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd> #}
+                        <dd>
+                            {{ form_errors(edit_form.dateCreation) }}
+                            {{ form_widget(edit_form.dateCreation) }}
+                        </dd>
+
+                        <dt>Deadline:</dt>
+                        {# <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd> #}
+                        <dd>
+                            {{ form_errors(edit_form.dateDeadline) }}
+                            {{ form_widget(edit_form.dateDeadline) }}
+                        </dd>
+
+                        <dt>Reporter:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.userCreated) }}
+                            {{ form_widget(edit_form.userCreated) }}
+                        </dd>
+
+                        <dt>Assignee:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.userAssigned) }}
+                            {{ form_widget(edit_form.userAssigned) }}
+                        </dd>
+
+                        <dt>Project:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.project) }}
+                            {{ form_widget(edit_form.project) }}
+                        </dd>
+
+                        <dt>Sprint:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.numberPoints) }}
+                            {{ form_widget(edit_form.numberPoints) }}
+                        </dd>
+
+                        <dt>Status:</dt>
+                        <dd>
+                            {{ form_errors(edit_form.status) }}
+                            {{ form_widget(edit_form.status) }}
+                        </dd>
+
+
+                        {#
                         <dt>where:</dt>
                         <dd>
                             {{ form_errors(edit_form.location) }}
@@ -38,6 +92,7 @@
                             {{ form_errors(edit_form.details) }}
                             {{ form_widget(edit_form.details) }}
                         </dd>
+                        #}
                     </dl>
 
                 {# the closing </form> tag #}

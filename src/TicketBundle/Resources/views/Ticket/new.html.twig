@@ -17,29 +17,80 @@
                 {{ form_start(form) }}
                     {{ form_errors(form) }}
                     <h1>
+                        <dr>ticket name:</dr>
                         {{ form_errors(form.name) }}
                         {{ form_widget(form.name) }}
                     </h1>
+                    {#
+                        <dl>
+                            <dt>description:</dt>
+                            <dd>
+                                {{ form_errors(form.description) }}
+                                {{ form_widget(form.description) }}
+                            </dd>
 
-                    <dl>
-                        <dt>description:</dt>
-                        <dd>
-                            {{ form_errors(form.description) }}
-                            {{ form_widget(form.description) }}
-                        </dd>
+                            <dt>reporter:</dt>
+                            <dd>
+                                {{ form_errors(form.userCreated) }}
+                                {{ form_widget(form.userCreated) }}
+                            </dd>
 
-                        <dt>reporter:</dt>
-                        <dd>
-                            {{ form_errors(form.userCreated) }}
-                            {{ form_widget(form.userCreated) }}
-                        </dd>
+                            <dt>assignee:</dt>
+                            <dd>
+                                {{ form_errors(form.userAssigned) }}
+                                {{ form_widget(form.userAssigned) }}
+                            </dd>
+                        </dl>
+                    #}
+                    <dt>description:</dt>
+                    <dd>
+                        {{ form_errors(form.description) }}
+                        {{ form_widget(form.description) }}
+                    </dd>
 
-                        <dt>assignee:</dt>
-                        <dd>
-                            {{ form_errors(form.userAssigned) }}
-                            {{ form_widget(form.userAssigned) }}
-                        </dd>
-                    </dl>
+                    <dt>Creation:</dt>
+                    {# <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd> #}
+                    <dd>
+                        {{ form_errors(form.dateCreation) }}
+                        {{ form_widget(form.dateCreation) }}
+                    </dd>
+
+                    <dt>Deadline:</dt>
+                    {# <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd> #}
+                    <dd>
+                        {{ form_errors(form.dateDeadline) }}
+                        {{ form_widget(form.dateDeadline) }}
+                    </dd>
+
+                    <dt>Reporter:</dt>
+                    <dd>
+                        {{ form_errors(form.userCreated) }}
+                        {{ form_widget(form.userCreated) }}
+                    </dd>
+
+                    <dt>Assignee:</dt>
+                    <dd>
+                        {{ form_errors(form.userAssigned) }}
+                        {{ form_widget(form.userAssigned) }}
+                    </dd>
+
+                    <dt>Project:</dt>
+                    <dd>
+                        {{ form_errors(form.project) }}
+                        {{ form_widget(form.project) }}
+                    </dd>
+
+                    <dt>Sprint:</dt>
+                    <dd>
+                        {{ form_errors(form.numberPoints) }}
+                        {{ form_widget(form.numberPoints) }}
+                    </dd>
+
+                    <dt>Status:</dt>
+                    <dd>
+                        {{ form_errors(form.status) }}
+                        {{ form_widget(form.status) }}
+                    </dd>
 
                 {# the closing </form> tag #}
                 {{ form_end(form) }}

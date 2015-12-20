@@ -4,13 +4,10 @@
 
     <section class="event-show">
         <header id="menu">
-            <a class="link" href="{{ path('ticket_homepage') }}">&larr; back to the events list</a>
+            <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to the events list</a>
         </header>
 
         <article>
-            <header class="map-container">
-                <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.location | url_encode }}&markers=color:red%7Ccolor:red%7C{{ entity.location | url_encode }}&zoom=14&size=300x300&maptype=roadmap&sensor=false" />
-            </header>
             <section>
                 <h1>
                     {{ entity.name }}
@@ -18,9 +15,9 @@
                 </h1>
 
                 <dl>
+                    {#
                     <dt>where:</dt>
                     <dd>{{ entity.location }}</dd>
-                    <br>penis</br>
 
                     <dt>when:</dt>
                     <dd>{{ entity.time | date('g:ia / l M j, Y') }}</dd>
@@ -34,6 +31,8 @@
                             <li>nobody yet!</li>
                         </ul>
                     </dd>
+                    #}
+
                 </dl>
             </section>
         </article>
