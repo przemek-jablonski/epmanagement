@@ -4,17 +4,46 @@
 
     <section class="event-show">
         <header id="menu">
-            <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to the events list</a>
+            <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to all tickets</a>
         </header>
 
         <article>
             <section>
+
                 <h1>
-                    {{ entity.name }}
-                    <a class="button" href="{{ path('ticket_homepage', {'id': entity.id}) }}">edit</a>
+                    {{ ticket.name }}
                 </h1>
+                <h2>
+                    <a class="button" href="{{ path('ticketcrud_edit', {'id': ticket.id}) }}">edit</a>
+                </h2>
 
                 <dl>
+                    <dt>description:</dt>
+                    <dd>
+                        {{ ticket.description }}
+                    </dd>
+
+                    <dt>Creation:</dt>
+                    <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
+
+                    <dt>Deadline:</dt>
+                    <dd>{{ ticket.dateDeadline | date("Y-m-d H:i:s") }}</dd>
+
+                    <dt>Reporter:</dt>
+                    <dd>{{ ticket.userCreated }} </dd>
+
+                    <dt>Assignee:</dt>
+                    <dd>{{ ticket.userAssigned }} </dd>
+
+                    <dt>Project:</dt>
+                    <dd>{{ ticket.project }} </dd>
+
+                    <dt>Sprint:</dt>
+                    <dd>{{ ticket.numberPoints }} </dd>
+
+                    <dt>Status:</dt>
+                    <dd>{{ ticket.status }} </dd>
+
                     {#
                     <dt>where:</dt>
                     <dd>{{ entity.location }}</dd>

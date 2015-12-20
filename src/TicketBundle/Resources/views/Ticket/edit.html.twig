@@ -18,11 +18,16 @@
 
                 </h1>
                     <dl>
-
                         <dd>
                             {{ form_errors(edit_form.name) }}
                             {{ form_widget(edit_form.name) }}
                         </dd>
+                        {#
+                        <dd>
+                            {{ form_errors(edit_form.submit) }}
+                            {{ form_widget(edit_form.submit) }}
+                        </dd>
+                        #}
                         <dt>description:</dt>
                         <dd>
                             {{ form_errors(edit_form.description) }}
@@ -30,14 +35,12 @@
                         </dd>
 
                         <dt>Creation:</dt>
-                       {# <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd> #}
                         <dd>
                             {{ form_errors(edit_form.dateCreation) }}
                             {{ form_widget(edit_form.dateCreation) }}
                         </dd>
 
                         <dt>Deadline:</dt>
-                        {# <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd> #}
                         <dd>
                             {{ form_errors(edit_form.dateDeadline) }}
                             {{ form_widget(edit_form.dateDeadline) }}
@@ -72,27 +75,6 @@
                             {{ form_errors(edit_form.status) }}
                             {{ form_widget(edit_form.status) }}
                         </dd>
-
-
-                        {#
-                        <dt>where:</dt>
-                        <dd>
-                            {{ form_errors(edit_form.location) }}
-                            {{ form_widget(edit_form.location) }}
-                        </dd>
-
-                        <dt>when:</dt>
-                        <dd>
-                            {{ form_errors(edit_form.time) }}
-                            {{ form_widget(edit_form.time) }}
-                        </dd>
-
-                        <dt>what:</dt>
-                        <dd>
-                            {{ form_errors(edit_form.details) }}
-                            {{ form_widget(edit_form.details) }}
-                        </dd>
-                        #}
                     </dl>
 
                 {# the closing </form> tag #}
