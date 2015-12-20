@@ -17,10 +17,15 @@
                 {{ form_start(form) }}
                     {{ form_errors(form) }}
                     <h1>
-                        <dr>ticket name:</dr>
-                        {{ form_errors(form.name) }}
-                        {{ form_widget(form.name) }}
+                        <dt>ticket name:</dt>
+
                     </h1>
+
+                <dd>
+                    {{ form_errors(form.name) }}
+                    {{ form_widget(form.name) }}
+                </dd>
+
                     {#
                         <dl>
                             <dt>description:</dt>
