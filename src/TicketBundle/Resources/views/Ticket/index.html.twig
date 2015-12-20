@@ -7,7 +7,11 @@
         <header id="menu">
             <h1>TicketList:</h1>
             <a class="button" href="{{ path('ticketcrud_new') }}">create new ticket</a>
-            <a class="button" href="{{ path('logout') }}">logout</a>
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <a class="button" href="{{ path('logout') }}">logout</a>
+            {% else %}
+                <a class="button" href="{{ path('user_login_form') }}">logout</a>
+            {% endif %}
         </header>
         {% for ticket in tickets %}
             <article>
