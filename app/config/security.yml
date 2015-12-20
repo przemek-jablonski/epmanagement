@@ -23,7 +23,7 @@ security:
                 login_path: user_login_form
             logout:
                 path:   logout
-                target: ticket      #route for landing on homepage after logout
+                target: ticketcrud_index      #route for landing on homepage after logout
             anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"

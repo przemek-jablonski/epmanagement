@@ -2,12 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>
+            {%- if block('title') -%}
+                {{ block('title') }} | Easy Project Management
+        </title>
+
+        {#
+            {% block stylesheets %}
+                <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/main.css') }}"/>
+                <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/event.css') }}"/>
+                <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/events.css') }}"/>
+            {% endblock %}
+        #}
+
         {% block stylesheets %}
-            <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/main.css') }}"/>
-            <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/event.css') }}"/>
-            <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/events.css') }}"/>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+            {% stylesheets filter='cssrewrite'
+                'bundles/ticket/css/event.css'
+                'bundles/ticket/css/events.css'
+                'bundles/ticket/css/main.css'
+            %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
         {% endblock %}
+        
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
