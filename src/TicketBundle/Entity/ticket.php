@@ -38,7 +38,7 @@ class ticket
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_creation", type="datetime")
+     * @ORM\Column(name="date_creation", type="datetime", nullable=true)
      */
     private $dateCreation;
 

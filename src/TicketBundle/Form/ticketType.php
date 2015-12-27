@@ -19,7 +19,7 @@ class ticketType extends AbstractType
             ->add('submit', SubmitType::class, array('label'=>'submit'))
             ->add('userCreated')
             ->add('userAssigned')
-            ->add('dateCreation', 'datetime')
+     /*       ->add('dateCreation', 'datetime') */
             ->add('dateDeadline', 'datetime')
             ->add('name')
             ->add('description')
