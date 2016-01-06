@@ -8,4 +8,8 @@ user_login_check:
 
 logout:
     path:    /logout
-    defaults: { _controller: UserBundle:Security:logout}
+    defaults: { _controller: UserBundle:Security:logout }
+
+testadduser:
+    path:   /dummyadd
+    defaults: { _controller: UserBundle:DummyAddition:addition }

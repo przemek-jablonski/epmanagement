@@ -2,29 +2,47 @@
 
 namespace UserBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-
 /**
  * user
+ *
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="UserBundle\Repository\userRepository")
  */
 class user implements UserInterface
 {
     /**
      * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="username", type="string", length=255, unique=true)
      */
     private $username;
 
     /**
      * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
+
+    /**
+     * @var array
+     *
+     * @ORM\Column(name="roles", type="json_array")
+     */
+    private $roles = array();
 
 
     /**
@@ -103,9 +121,19 @@ class user implements UserInterface
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
-        return array('ROLE_USER');
+        $roles = $this->roles;
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
     }
+
+
+    public function setRoles($role) {
+
+        $this->roles = $role;
+        return $this;
+    }
+
 
     /**
      * Returns the salt that was originally used to encode the password.
@@ -116,7 +144,6 @@ class user implements UserInterface
      */
     public function getSalt()
     {
-        // TODO: Implement getSalt() method.
         return null;
     }
 

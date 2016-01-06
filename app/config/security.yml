@@ -2,12 +2,13 @@ security:
     encoders:
         UserBundle\Entity\user: bcrypt
 
+
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        users_from_orm:
+        orm_users:
             entity: { class: UserBundle:user, property: username }
 
     #    in_memory:
