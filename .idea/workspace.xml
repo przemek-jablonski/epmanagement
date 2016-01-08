@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-53.75">
-              <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
+            <state vertical-scroll-proportion="0.8005319">
+              <caret line="190" column="41" selection-start-line="190" selection-start-column="41" selection-end-line="190" selection-end-column="41" />
               <folding>
                 <element signature="e#37#69#0#PHP" expanded="true" />
               </folding>
@@ -44,10 +44,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadUsers.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoadUsers.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UserBundle/DataFixtures/ORM/LoadUsers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40159574">
+            <state vertical-scroll-proportion="-12.583333">
               <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
               <folding>
                 <element signature="e#7#89#0#PHP" expanded="true" />
@@ -150,8 +150,8 @@
         <option value="$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/DummyAdditionController.php" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/UserBundle/Entity/user.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/DataFixtures/ORM/LoadUsers.php" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Entity/user.php" />
       </list>
     </option>
   </component>
@@ -1078,23 +1078,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-53.75">
-          <caret line="116" column="72" selection-start-line="116" selection-start-column="72" selection-end-line="116" selection-end-column="72" />
-          <folding>
-            <element signature="e#37#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/DataFixtures/ORM/LoadUsers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40159574">
+        <state vertical-scroll-proportion="-12.583333">
           <caret line="32" column="48" selection-start-line="32" selection-start-column="48" selection-end-line="32" selection-end-column="48" />
           <folding>
             <element signature="e#7#89#0#PHP" expanded="true" />
             <element signature="e#91#141#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Entity/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8005319">
+          <caret line="190" column="41" selection-start-line="190" selection-start-column="41" selection-end-line="190" selection-end-column="41" />
+          <folding>
+            <element signature="e#37#69#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
