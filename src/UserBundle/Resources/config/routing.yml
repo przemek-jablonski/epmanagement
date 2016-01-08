@@ -13,3 +13,8 @@ logout:
 testadduser:
     path:   /dummyadd
     defaults: { _controller: UserBundle:DummyAddition:addition }
+
+user_register:
+    resource: "@UserBundle/Controller/RegisterController.php"
+    prefix:   /
+    type:     annotation
