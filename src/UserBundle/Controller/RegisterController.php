@@ -12,6 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\Form;
+use Symfony\Component\HttpFoundation\Request;
+use UserBundle\Entity\user;
 
 
 class RegisterController extends Controller
@@ -21,19 +23,44 @@ class RegisterController extends Controller
      * @Route("/register", name="user_register")
      * @Template()
      */
-    public function registerAction() {
+    public function registerAction(Request $request) {
         $form = $this->createFormBuilder()
             ->add('username', 'text')
             ->add('email', 'text')
-            ->add('password', 'repeated', array(
-                'type' => 'password'
-            ))
+            ->add('password', 'repeated', array('type' => 'password'))
             ->getForm();
 
-        $formView = $form->createView();
-        $formView->widgetSchema->setLabel('the_field_id', false);
+        $form->handleRequest($request);
+        if ($form->isValid()) {
+            $data = $form->getData();
+
+            $user = new user();
+            $user->setUsername($data['username']);
+            $user->setEmail($data['email']);
+            $user->setPassword($this->encodePassword($user, $data['password']));
+
+            $manager = $this->getDoctrine()->getManager();
+            $manager->persist($user);
+            $manager->flush();
+
+
+            $url = $this->generateUrl('ticketcrud_index');
+
+            return $this->redirect($url);
+
+        }
 
         return array('form' => $form->createView());
     }
+
+
+    private function encodePassword(user $testUser, $plainPassword) {
+
+        $encoder = $this->container->get('security.encoder_factory')
+            ->getEncoder($testUser);
+
+        return $encoder->encodePassword($plainPassword, $testUser->getSalt());
+    }
+
 
 }
