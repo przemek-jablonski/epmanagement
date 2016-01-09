@@ -5,6 +5,7 @@ namespace UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * user
@@ -26,6 +27,7 @@ class user implements UserInterface, \Serializable
     /**
      * @var string
      *
+     * @Assert\NotBlank()
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
