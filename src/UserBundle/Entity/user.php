@@ -4,6 +4,7 @@ namespace UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -27,7 +28,10 @@ class user implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(message="insert username.")
+     * @Assert\Length(
+     *      max=2
+     *              )
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
@@ -253,6 +257,5 @@ class user implements UserInterface, \Serializable
             $this->password
             ) = unserialize($serialized);
     }
-
 }
 

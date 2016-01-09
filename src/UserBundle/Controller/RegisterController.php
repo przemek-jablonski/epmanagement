@@ -37,7 +37,7 @@ class RegisterController extends Controller
 
 
         $form->handleRequest($request);
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
 
             $user = new user();
