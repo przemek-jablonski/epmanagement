@@ -45,7 +45,6 @@ class RegisterController extends Controller
 
 
             $url = $this->generateUrl('ticketcrud_index');
-
             return $this->redirect($url);
 
         }
