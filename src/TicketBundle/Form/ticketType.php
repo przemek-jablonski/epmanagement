@@ -25,8 +25,7 @@ class ticketType extends AbstractType
             ->add('description')
             ->add('numberPoints')
             ->add('project')
-            ->add('status')
-        ;
+            ->add('status');
     }
     
     /**

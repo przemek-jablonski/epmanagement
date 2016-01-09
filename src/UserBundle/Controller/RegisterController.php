@@ -14,6 +14,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use UserBundle\Entity\user;
+use UserBundle\Form\RegisterFormType;
 
 
 class RegisterController extends Controller
@@ -24,11 +25,16 @@ class RegisterController extends Controller
      * @Template()
      */
     public function registerAction(Request $request) {
+        /*
         $form = $this->createFormBuilder()
             ->add('username', 'text')
             ->add('email', 'text')
             ->add('plainPassword', 'repeated', array('type' => 'password'))
             ->getForm();
+        */
+
+        $form = $this->createForm(new RegisterFormType());
+
 
         $form->handleRequest($request);
         if ($form->isValid()) {
@@ -63,6 +69,4 @@ class RegisterController extends Controller
 
         return $encoder->encodePassword($plainPassword, $testUser->getSalt());
     }
-
-
 }
