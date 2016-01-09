@@ -59,7 +59,7 @@ class user implements UserInterface, \Serializable
 
     /**
      * @var array
-     *
+     * @Assert\NotBlank(message="insert email")
      * @ORM\Column(name="roles", type="json_array")
      */
     private $roles = array();

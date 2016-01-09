@@ -33,7 +33,7 @@ class RegisterController extends Controller
             ->getForm();
         */
 
-        $form = $this->createForm(new RegisterFormType());
+        $form = $this->createForm(new RegisterFormType(), new user());
 
 
         $form->handleRequest($request);
