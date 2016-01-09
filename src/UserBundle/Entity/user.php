@@ -38,6 +38,13 @@ class user implements UserInterface, \Serializable
     private $password;
 
     /**
+     * Temporarily stores plain password from user.
+     *
+     * @var string
+     */
+    private $plainPassword;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255)
@@ -108,6 +115,22 @@ class user implements UserInterface, \Serializable
     public function getPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    /**
+     * @param mixed $plainPassword
+     */
+    public function setPlainPassword($plainPassword)
+    {
+        $this->plainPassword = $plainPassword;
     }
 
 
@@ -188,7 +211,7 @@ class user implements UserInterface, \Serializable
      */
     public function eraseCredentials()
     {
-        // TODO: Implement eraseCredentials() method.
+        $this->setPlainPassword(null);
     }
 
 
