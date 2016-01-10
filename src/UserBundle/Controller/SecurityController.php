@@ -7,12 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class SecurityController extends Controller
 {
     /**
-     * @Template
+     * @Template()
      */
+
 
     public function loginAction() {
         $authenticationUtils = $this->get('security.authentication_utils');
@@ -32,6 +34,7 @@ class SecurityController extends Controller
             )
         );
         */
+
         return array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
@@ -40,12 +43,17 @@ class SecurityController extends Controller
     }
 
     public function loginCheckAction() {
+        $session = new Session();
+        $session->getFlashbag()
+            ->add('success_login', 'Hi, welcome back. Good to see you.');
 
     }
 
 
     public function logoutAction() {
-
+        $session = new Session();
+        $session->getFlashbag()
+            ->add('success_login', 'Hi, welcome back. Good to see you.');
     }
 
 

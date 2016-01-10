@@ -55,6 +55,9 @@ class RegisterController extends Controller
             $manager->persist($user);
             $manager->flush();
 
+            $request->getSession()->getFlashbag()
+                ->add('success_register', 'Welcome! Good to have you onboard.
+                Use your newly obtained credentials to login and start tracking');
 
             $url = $this->generateUrl('ticketcrud_index');
             return $this->redirect($url);
