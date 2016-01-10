@@ -6,13 +6,18 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\Role\Role;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * user
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\userRepository")
+ * @UniqueEntity(fields="username", message="that username is already taken.")
+ * @UniqueEntity(fields="email", message="this emails exists in our database.")
  */
 class user implements UserInterface, \Serializable
 {
@@ -30,14 +35,15 @@ class user implements UserInterface, \Serializable
      *
      * @Assert\NotBlank(message="insert username.")
      * @Assert\Length(
-     *      max=2
-     *              )
+     *      min=3,
+     *      max=15)
      * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
 
     /**
      * @var string
+     *
      *
      * @ORM\Column(name="password", type="string", length=255)
      */
@@ -53,13 +59,15 @@ class user implements UserInterface, \Serializable
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="insert email")
+     * @Assert\Email(message="this email is not valid")
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @var array
-     * @Assert\NotBlank(message="insert email")
+     *
      * @ORM\Column(name="roles", type="json_array")
      */
     private $roles = array();

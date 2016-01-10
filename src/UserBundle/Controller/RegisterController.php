@@ -25,19 +25,16 @@ class RegisterController extends Controller
      * @Template()
      */
     public function registerAction(Request $request) {
-        /*
-        $form = $this->createFormBuilder()
-            ->add('username', 'text')
-            ->add('email', 'text')
-            ->add('plainPassword', 'repeated', array('type' => 'password'))
-            ->getForm();
-        */
 
-        $form = $this->createForm(new RegisterFormType(), new user());
+        $user = new user();
+
+        //tu bylo ", new user());"
+        $form = $this->createForm(new RegisterFormType(), $user);
 
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+        /*
             $data = $form->getData();
 
             $user = new user();
@@ -47,6 +44,12 @@ class RegisterController extends Controller
             $user->setPassword($this->encodePassword($user, $data['plainPassword']));
 
             $data = null;
+        */
+            $user = $form->getData();
+
+            $user->setPassword(
+                $this->encodePassword($user, $user->getPlainPassword())
+            );
 
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($user);
