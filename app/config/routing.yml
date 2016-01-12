@@ -5,7 +5,3 @@ user:
 ticket:
     resource: "@TicketBundle/Resources/config/routing.yml"
     prefix:   /
-
-#start:
-#    resource: "@StartBundle/Resources/config/routing.yml"
-#    prefix:   /start/

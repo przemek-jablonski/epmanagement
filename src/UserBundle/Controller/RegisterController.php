@@ -13,6 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 use UserBundle\Entity\user;
 use UserBundle\Form\RegisterFormType;
 
@@ -55,10 +56,15 @@ class RegisterController extends Controller
             $manager->persist($user);
             $manager->flush();
 
+            $session = new Session();
+            $session->getFlashBag()
+                ->add('flash_success', 'Welcome! Good to have you onboard.
+                Use your newly obtained credentials to login and start tracking.');
+            /*
             $request->getSession()->getFlashbag()
-                ->add('success_register', 'Welcome! Good to have you onboard.
-                Use your newly obtained credentials to login and start tracking');
-
+                ->add('flash_success', 'Welcome! Good to have you onboard.
+                Use your newly obtained credentials to login and start tracking.');
+            */
             $url = $this->generateUrl('ticketcrud_index');
             return $this->redirect($url);
 

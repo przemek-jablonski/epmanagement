@@ -32,21 +32,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% if app.session.flashBag.has('success_register') %}
-            <div class="alert alert-success fade in">
-                {% for message in app.session.flashbag.get('success_register') %}
-                    {{ message }}
-                {% endfor %}
-            </div>
-        {% else %}
-            {% if app.session.flashBag.has('success_login') %}
+            {% if app.session.flashBag.has('flash_success') %}
                 <div class="alert alert-success fade in">
-                    {% for message in app.session.flashbag.get('success_login') %}
+                    {% for message in app.session.flashbag.get('flash_success') %}
                         {{ message }}
                     {% endfor %}
                 </div>
             {% endif %}
-        {% endif %}
 
 
         {% block body %}{% endblock %}

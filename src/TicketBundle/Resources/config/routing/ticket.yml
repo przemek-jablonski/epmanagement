@@ -3,6 +3,11 @@ ticketcrud_index:
     defaults: { _controller: "TicketBundle:ticket:index" }
     methods:  GET
 
+ticketcrud_firstindex:
+    path:    /loginLand
+    defaults: { _controller: "TicketBundle:ticket:firstIndex" }
+    methods:  GET
+
 ticketcrud_show:
     path:     /{id}/show
     defaults: { _controller: "TicketBundle:ticket:show" }

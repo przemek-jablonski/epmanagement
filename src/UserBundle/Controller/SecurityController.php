@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 class SecurityController extends Controller
 {
     /**
-     * @Template()
+     * @Template
      */
 
 
@@ -24,6 +24,7 @@ class SecurityController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+
         /*
         return $this->render(
             'security/login.html.twig',
@@ -35,6 +36,7 @@ class SecurityController extends Controller
         );
         */
 
+
         return array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
@@ -43,9 +45,7 @@ class SecurityController extends Controller
     }
 
     public function loginCheckAction() {
-        $session = new Session();
-        $session->getFlashbag()
-            ->add('success_login', 'Hi, welcome back. Good to see you.');
+
 
     }
 
@@ -53,7 +53,7 @@ class SecurityController extends Controller
     public function logoutAction() {
         $session = new Session();
         $session->getFlashbag()
-            ->add('success_login', 'Hi, welcome back. Good to see you.');
+            ->add('flash_success', 'COME BACK');
     }
 
 

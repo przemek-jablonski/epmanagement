@@ -5,6 +5,7 @@ namespace TicketBundle\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Component\HttpFoundation\Session\Session;
 use TicketBundle\Entity\ticket;
 use TicketBundle\Form\ticketType;
 
@@ -27,6 +28,16 @@ class ticketController extends Controller
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'tickets' => $tickets,
         ));
+    }
+
+    public function firstIndexAction() {
+
+        $session = new Session();
+        $session->getFlashbag()
+            ->add('flash_success', 'Hi! Welcome back..');
+
+        //$url = $this->generateUrl('ticketcrud_index');
+        return $this->redirectToRoute('ticketcrud_index');
     }
 
     /**
