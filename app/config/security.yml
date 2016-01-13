@@ -27,6 +27,7 @@ security:
             logout:
                 path:   logout
                 target: ticketcrud_firstindex      #route for landing on homepage after logIN (what in the actual fuck)
+
             anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"

@@ -4,7 +4,7 @@ ticketcrud_index:
     methods:  GET
 
 ticketcrud_firstindex:
-    path:    /loginLand
+    path:    /login
     defaults: { _controller: "TicketBundle:ticket:firstIndex" }
     methods:  GET
 
