@@ -3,6 +3,7 @@
 namespace TicketBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * ticket
@@ -23,6 +24,7 @@ class ticket
 
     /**
      * @var string
+     *
      *
      * @ORM\Column(name="user_created", type="string", length=15)
      */
@@ -45,6 +47,7 @@ class ticket
     /**
      * @var \DateTime
      *
+     *
      * @ORM\Column(name="date_deadline", type="datetime")
      */
     private $dateDeadline;
@@ -66,6 +69,10 @@ class ticket
     /**
      * @var int
      *
+     * @Assert\Type(
+     *      type="integer",
+     *      message="points value given ({{value}}) is not a valid {{type}} type."
+     * )
      * @ORM\Column(name="number_points", type="integer")
      */
     private $numberPoints;

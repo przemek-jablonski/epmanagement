@@ -15,6 +15,9 @@ use TicketBundle\Form\ticketType;
  */
 class ticketController extends Controller
 {
+    private $firstLogin = true;
+    private $session;
+
     /**
      * Lists all ticket entities.
      *
@@ -25,19 +28,26 @@ class ticketController extends Controller
 
         $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
 
+        $this->session = new Session();
+
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'tickets' => $tickets,
+            'controllerAction' => 'indexAction()'
         ));
     }
 
     public function firstIndexAction() {
 
-        $session = new Session();
-        $session->getFlashbag()
-            ->add('flash_success', 'Hi! Welcome back..');
+        $this->session = new Session();
+        $this->session->getFlashBag()->add('flash_success', 'Welcome back!');
 
-        //$url = $this->generateUrl('ticketcrud_index');
-        return $this->redirectToRoute('ticketcrud_index');
+        $em = $this->getDoctrine()->getManager();
+        $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
+
+        return $this->render('TicketBundle:Ticket:index.html.twig', array(
+            'tickets' => $tickets,
+            'controllerAction' => 'firstIndexAction()'
+        ));
     }
 
     /**
@@ -54,6 +64,9 @@ class ticketController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);
             $em->flush();
+
+            $this->session->getFlashBag()
+                ->add('flash_success', 'Congratulations on successful creating a new ticket!');
 
             return $this->redirectToRoute('ticketcrud_show', array('id' => $ticket->getId()));
         }

@@ -19,7 +19,6 @@ security:
     #                a:     { password: a, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
-
         secured_area:
             pattern:    ^/
             form_login:
@@ -27,7 +26,7 @@ security:
                 login_path: user_login_form
             logout:
                 path:   logout
-                target: ticketcrud_index      #route for landing on homepage after logout
+                target: ticketcrud_firstindex      #route for landing on homepage after logIN (what in the actual fuck)
             anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"

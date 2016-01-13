@@ -36,7 +36,6 @@ class SecurityController extends Controller
         );
         */
 
-
         return array(
                 // last username entered by the user
                 'last_username' => $lastUsername,

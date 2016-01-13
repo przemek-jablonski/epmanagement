@@ -13,6 +13,7 @@
                 <a class="button" href="{{ path('user_login_form') }}">logout</a>
             {% endif %}
         </header>
+        <br>
         {% for ticket in tickets %}
             <article>
                 {#
@@ -60,5 +61,6 @@
                 </section>
             </article>
         {% endfor %}
+        Controller called {{ controllerAction }}
     </section>
 {% endblock %}
