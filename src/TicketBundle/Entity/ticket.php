@@ -26,6 +26,7 @@ class ticket
      * @var string
      *
      * @Assert\NotBlank(message="insert userCreated")
+     * 
      * @ORM\Column(name="user_created", type="string", length=15)
      */
     private $userCreated;
