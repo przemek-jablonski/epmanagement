@@ -49,9 +49,29 @@ class SecurityController extends Controller
         );
     }
 
-    public function
+    public function loginFailureAction() {
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        $session = new Session();
+        $session->getFlashBag()
+            ->add('flash_error', 'Oops! Your username or password does not match or exist. Try again or register, please.');
+
+        return array(
+            // last username entered by the user
+            'last_username' => $lastUsername,
+            'error'         => $error,
+        );
+    }
 
     public function loginCheckAction() {
+
+
+
 
 
     }

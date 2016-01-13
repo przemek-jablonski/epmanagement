@@ -10,26 +10,27 @@
 {%  endblock %}
 
 
+
 {% block body %}
+    {% if error %}
+        <div class="alert alert-danger fade in">
+            Oops! Your username or password does not match or exist. Try again or register, please.
+        </div>
+    {% endif %}
     <section class="login">
         <article>
-            {% if not error %}
-            <div class="alert alert-warning fade in">
-                 Hi there! Please insert your credentials below.
-            {% endif %}
-
-            {% if error %}
-             <div class="alert alert-warning fade in">
-                 Invalid login credentials.
-            {% endif %}
-
-            {#
-                {% if error %}
-                    <div class="error">{{ error.messageKey | trans}}</div>
-                {% endif %}
-            #}
 
             <form action="{{ path('user_login_check') }}" method="post">
+                </hr>
+
+            {% if error %}
+             <div class="alert alert-danger fade in">
+                 Invalid login credentials. </br></hr>
+            {% else %}
+                <div class="alert alert-warning fade in">
+                      Hi there! Please insert your credentials below. </br></hr>
+            {% endif %}
+
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
@@ -42,7 +43,7 @@
                 <input type="hidden" name="ticketcrud_firstindex" value="/loginLand" />
 
                 <button type="submit" class="btn btn-primary pull-right">login</button>
-
+                </div> </div>
             </form>
 
         </article>
