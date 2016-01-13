@@ -23,13 +23,13 @@
             <form action="{{ path('user_login_check') }}" method="post">
                 </hr>
 
-            {% if error %}
-             <div class="alert alert-danger fade in">
-                 Invalid login credentials. </br></hr>
-            {% else %}
-                <div class="alert alert-warning fade in">
-                      Hi there! Please insert your credentials below. </br></hr>
-            {% endif %}
+                {% if error %}
+                 <div class="alert alert-danger fade in">
+                     Invalid login credentials. </br></hr>
+                {% else %}
+                 <div class="alert alert-warning fade in">
+                     Hi there! Please insert your credentials below. </br></hr>
+                {% endif %}
 
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="_username" value="{{ last_username }}" />

@@ -12,6 +12,17 @@
             <h1>Register</h1>
 
             <form action="{{ path('user_register') }}" method="POST">
+                </hr>
+
+                {% if not form.vars.valid %}
+                <div class="alert alert-danger fade in">
+                    Invalid data detected in registration form. </br></hr>
+                {% else %}
+                <div class="alert alert-warning fade in">
+                    Please fill in the registration form. </br></hr>
+                {% endif %}
+
+
                 {{ form_errors(form) }}
 
                 {{ form_row(form.username, {
@@ -29,6 +40,7 @@
 
                 {{ form_rest(form) }}
                 <input type="submit" value="Register!" class="btn btn-primary pull-right" />
+                </div></div>
             </form>
         </article>
     </section>

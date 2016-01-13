@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use UserBundle\Entity\user;
 use UserBundle\Form\RegisterFormType;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 
 
 class RegisterController extends Controller
@@ -56,8 +57,8 @@ class RegisterController extends Controller
             $manager->persist($user);
             $manager->flush();
 
-
-            $this->$session->getFlashBag()
+            $this->session = new Session();
+            $this->session->getFlashBag()
                 ->add('flash_success', 'Welcome! Good to have you onboard.
                 Use your newly obtained credentials to login and start tracking.');
             /*
@@ -69,10 +70,11 @@ class RegisterController extends Controller
             return $this->redirect($url);
         }
 
-        $this->$session->getFlashBag()
-            ->add('flash_error', 'We have received wrong credentials. Try again.');
-
-
+        if($form->isSubmitted() && !$form->isValid()) {
+            $this->session = new Session();
+            $this->session->getFlashBag()
+                ->add('flash_error', 'Something is not right abount the credentials you have put in. See errors for info.');
+        }
 
         return array('form' => $form->createView());
     }
