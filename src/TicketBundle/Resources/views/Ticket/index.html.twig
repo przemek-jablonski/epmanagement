@@ -5,27 +5,27 @@
     <section class="events">
 
         <header id="menu">
-            <h1>TicketList:</h1>
-            <a class="button" href="{{ path('ticketcrud_new') }}">create new ticket</a>
-            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                <a class="button" href="{{ path('logout') }}">logout</a>
-            {% else %}
-                <a class="button" href="{{ path('user_login_form') }}">logout</a>
-            {% endif %}
+                <h1>TicketList:</h1>
+                <a class="button" href="{{ path('ticketcrud_new') }}">create new ticket</a>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <a class="button" href="{{ path('logout') }}">logout</a>
+                {% else %}
+                    <a class="button" href="{{ path('user_login_form') }}">logout</a>
+                {% endif %}
+
         </header>
-        <br>
+        <hr>
+        {#
+            lets assume that here we render all ongoing tickets
+        #}
+
         {% for ticket in tickets %}
             <article>
-                {#
-                <header class="map-container">
-                    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ entity.location | url_encode }}&markers=color:red%7Ccolor:red%7C{{ entity.location | url_encode }}&zoom=14&size=150x150&maptype=roadmap&sensor=false" />
-                </header>
-                #}
                 <section>
+                    <div class="alert alert-warning fade in">
                     <h3>
                         <a href="{{ path('ticketcrud_show', {'id': ticket.id}) }}">{{ ticket.name }}</a>
                     </h3>
-
                     <dl>
                         <dt>Ticket ID:</dt>
                         <dd>{{ ticket.id }}</dd>
@@ -58,9 +58,11 @@
                         <dd>{{ ticket.status }}</dd>
 
                     </dl>
+                    </div>
                 </section>
             </article>
         {% endfor %}
-        Controller called {{ controllerAction }}
+
+
     </section>
 {% endblock %}
