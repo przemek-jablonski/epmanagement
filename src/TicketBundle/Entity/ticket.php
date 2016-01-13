@@ -3,6 +3,7 @@
 namespace TicketBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use UserBundle\Entity\user;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -23,11 +24,9 @@ class ticket
     private $id;
 
     /**
-     * @var string
      *
-     * @Assert\NotBlank(message="insert userCreated")
-     * 
-     * @ORM\Column(name="user_created", type="string", length=15)
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\user")
+     * @ORM\JoinColumn(onDelete="CASCADE")
      */
     private $userCreated;
 
@@ -111,7 +110,7 @@ class ticket
     /**
      * Set userCreated
      *
-     * @param string $userCreated
+     * @param user $userCreated
      *
      * @return ticket
      */
@@ -125,7 +124,7 @@ class ticket
     /**
      * Get userCreated
      *
-     * @return string
+     * @return user
      */
     public function getUserCreated()
     {

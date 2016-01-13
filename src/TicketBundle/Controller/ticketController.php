@@ -27,11 +27,17 @@ class ticketController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
+        $visibleTickets = array();
+
+        foreach($tickets as $ticket) {
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($visibleTickets, $ticket);
+        }
 
         $this->session = new Session();
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'tickets' => $tickets,
+            'tickets' => $visibleTickets,
             'controllerAction' => 'indexAction()'
         ));
     }
@@ -44,8 +50,14 @@ class ticketController extends Controller
         $em = $this->getDoctrine()->getManager();
         $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
 
+        $visibleTickets = array();
+        foreach($tickets as $ticket) {
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($visibleTickets, $ticket);
+        }
+
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'tickets' => $tickets,
+            'tickets' => $visibleTickets,
             'controllerAction' => 'firstIndexAction()'
         ));
     }
@@ -62,6 +74,9 @@ class ticketController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $ticket->setUserCreated($this->getUser());
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);

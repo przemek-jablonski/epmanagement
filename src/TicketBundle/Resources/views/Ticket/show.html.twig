@@ -32,7 +32,8 @@
                     <dd>{{ ticket.dateDeadline | date("Y-m-d H:i:s") }}</dd>
 
                     <dt>Reporter:</dt>
-                    <dd>{{ ticket.userCreated }} </dd>
+
+                    <dd>{{ ticket.userCreated.username }} </dd>
 
                     <dt>Assignee:</dt>
                     <dd>{{ ticket.userAssigned }} </dd>
