@@ -24,7 +24,13 @@ class SecurityController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
-
+/*
+        if($this->error->getLine() != null) {
+            $session = new Session();
+            $session->getFlashBag()
+                ->add('flash_error', 'Oops! Your username or password does not match or exist. Try again or register, please.');
+        }
+*/
         /*
         return $this->render(
             'security/login.html.twig',
@@ -43,6 +49,8 @@ class SecurityController extends Controller
         );
     }
 
+    public function
+
     public function loginCheckAction() {
 
 
@@ -51,7 +59,7 @@ class SecurityController extends Controller
 
     public function logoutAction() {
         $session = new Session();
-        $session->getFlashbag()
+        $this->$session->getFlashbag()
             ->add('flash_success', 'COME BACK');
     }
 

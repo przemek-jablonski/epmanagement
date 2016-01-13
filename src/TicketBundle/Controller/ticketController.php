@@ -57,19 +57,27 @@ class ticketController extends Controller
     public function newAction(Request $request)
     {
         $ticket = new ticket();
-        $form = $this->createForm(new ticketType(), $ticket);
-        $form->handleRequest($request);
 
+        $form = $this->createForm(new ticketType(), $ticket);
+
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);
             $em->flush();
 
+            $this->session = new Session();
             $this->session->getFlashBag()
-                ->add('flash_success', 'Congratulations on successful creating a new ticket!');
+                ->add('flash_success', 'Congratulations on successfully creating a new ticket!');
 
             return $this->redirectToRoute('ticketcrud_show', array('id' => $ticket->getId()));
+        }
+
+        if($form->isSubmitted() && !$form->isValid()) {
+            $this->session = new Session();
+            $this->session->getFlashBag()
+                ->add('flash_error', 'There are some errors in form data we have received. Please fix them.');
         }
 
         return $this->render('TicketBundle:Ticket:new.html.twig', array(

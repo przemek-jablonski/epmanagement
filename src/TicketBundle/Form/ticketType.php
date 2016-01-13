@@ -17,13 +17,13 @@ class ticketType extends AbstractType
     {
         $builder
             ->add('submit', SubmitType::class, array('label'=>'submit'))
-            ->add('userCreated')
-            ->add('userAssigned')
-     /*       ->add('dateCreation', 'datetime') */
+            ->add('userCreated', 'text')
+            ->add('userAssigned', 'text')
+     /*       ->add('dateCreation', 'datetime') */ //handled from within database
             ->add('dateDeadline', 'datetime')
-            ->add('name')
-            ->add('description')
-            ->add('numberPoints')
+            ->add('name', 'text')
+            ->add('description', 'text')
+            ->add('numberPoints', 'integer')
             ->add('project')
             ->add('status');
     }

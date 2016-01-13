@@ -28,8 +28,8 @@ class RegisterController extends Controller
     public function registerAction(Request $request) {
 
         $user = new user();
+        $session = new Session();
 
-        //tu bylo ", new user());"
         $form = $this->createForm(new RegisterFormType(), $user);
 
 
@@ -56,8 +56,8 @@ class RegisterController extends Controller
             $manager->persist($user);
             $manager->flush();
 
-            $session = new Session();
-            $session->getFlashBag()
+
+            $this->$session->getFlashBag()
                 ->add('flash_success', 'Welcome! Good to have you onboard.
                 Use your newly obtained credentials to login and start tracking.');
             /*
@@ -67,8 +67,12 @@ class RegisterController extends Controller
             */
             $url = $this->generateUrl('ticketcrud_index');
             return $this->redirect($url);
-
         }
+
+        $this->$session->getFlashBag()
+            ->add('flash_error', 'We have received wrong credentials. Try again.');
+
+
 
         return array('form' => $form->createView());
     }

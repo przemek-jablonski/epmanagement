@@ -40,6 +40,15 @@
                 </div>
             {% endif %}
 
+            {% if app.session.flashBag.has('flash_error') %}
+                <div class="alert alert-danger fade in">
+                    {% for message in app.session.flashbag.get('flash_error') %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

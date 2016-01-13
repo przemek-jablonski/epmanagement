@@ -25,7 +25,7 @@ class ticket
     /**
      * @var string
      *
-     *
+     * @Assert\NotBlank(message="insert userCreated")
      * @ORM\Column(name="user_created", type="string", length=15)
      */
     private $userCreated;
@@ -33,6 +33,7 @@ class ticket
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="insert userAssigned")
      * @ORM\Column(name="user_assigned", type="string", length=15)
      */
     private $userAssigned;
@@ -47,7 +48,7 @@ class ticket
     /**
      * @var \DateTime
      *
-     *
+     * @Assert\NotBlank(message="insert deadline")
      * @ORM\Column(name="date_deadline", type="datetime")
      */
     private $dateDeadline;
@@ -55,6 +56,7 @@ class ticket
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="insert ticket name")
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
@@ -73,6 +75,7 @@ class ticket
      *      type="integer",
      *      message="points value given ({{value}}) is not a valid {{type}} type."
      * )
+     * @Assert\NotBlank(message="insert number of sprint points")
      * @ORM\Column(name="number_points", type="integer")
      */
     private $numberPoints;
@@ -80,6 +83,7 @@ class ticket
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="insert project in which ticket should belong")
      * @ORM\Column(name="project", type="string", length=255)
      */
     private $project;
@@ -87,6 +91,7 @@ class ticket
     /**
      * @var string
      *
+     * @Assert\NotBlank(message="insert ticket status")
      * @ORM\Column(name="status", type="string", length=20)
      */
     private $status;
