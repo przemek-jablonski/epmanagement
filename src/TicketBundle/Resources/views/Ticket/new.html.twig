@@ -7,12 +7,17 @@
         </header>
 
         <article>
-            {#
-            <header class="map-container">
-                <img src="http://maps.googleapis.com/maps/api/staticmap?center=Somewhere,%20US&zoom=15&size=300x300&maptype=roadmap&sensor=false" />
-            </header>
-            #}
+
             <section>
+            {% if not form.vars.valid %}
+            <div class="alert alert-danger fade in">
+                Something is not right. Check your input, please... </br></hr>
+                {% else %}
+                <div class="alert alert-warning fade in">
+                    Create a brand new ticket below: </br></hr>
+                    {% endif %}
+
+
                 {# the opening <form> tag #}
                 {{ form_start(form) }}
                     {{ form_errors(form) }}
@@ -98,6 +103,8 @@
 
                 {# the closing </form> tag #}
                 {{ form_end(form) }}
+
+                </div></div>
             </section>
         </article>
     </section>

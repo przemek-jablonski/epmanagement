@@ -40,14 +40,59 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.39893618">
-                  <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+                <state vertical-scroll-proportion="-18.75">
+                  <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
                   <folding>
                     <element signature="e#125#182#0#PHP" expanded="true" />
-                    <element signature="e#2187#2205#1#PHP" expanded="true" />
+                    <element signature="e#1565#1583#1#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="7.4166665">
+                  <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+                  <folding>
+                    <element signature="e#41#103#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.8005319">
+                  <caret line="106" column="28" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ticketController.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-8.166667">
+                  <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#43#88#0#PHP" expanded="true" />
+                    <element signature="e#587#608#1#PHP" expanded="true" />
+                    <element signature="e#693#730#0#PHP" expanded="true" />
+                    <element signature="e#1133#1154#1#PHP" expanded="true" />
+                    <element signature="e#1198#1235#0#PHP" expanded="true" />
+                    <element signature="e#2002#2019#0#PHP" expanded="true" />
+                    <element signature="e#2359#2394#0#PHP" expanded="true" />
+                    <element signature="e#2703#2739#0#PHP" expanded="true" />
+                    <element signature="e#3397#3414#0#PHP" expanded="true" />
+                    <element signature="e#3490#3526#0#PHP" expanded="true" />
+                    <element signature="e#4133#4151#1#PHP" expanded="true" />
+                    <element signature="e#4485#4504#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -60,21 +105,11 @@
           <file leaf-file-name="register.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Register/register.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.31914893">
-                  <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.43882978">
+                  <caret line="22" column="27" selection-start-line="14" selection-start-column="14" selection-end-line="22" selection-end-column="27" />
                   <folding>
                     <element signature="e#12#28#0#Twig" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="AuthenticationException.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/AuthenticationException.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0">
-                  <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -104,16 +139,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-2.5">
                   <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-33.75">
-                  <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -157,7 +182,6 @@
         <option value="$PROJECT_DIR$/sample/oldtwig" />
         <option value="$PROJECT_DIR$/sample/Event/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/edit.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/DummyAdditionController.php" />
@@ -169,15 +193,16 @@
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/config/routing/ticket.yml" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php" />
-        <option value="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/src/UserBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/UserBundle/Form/RegisterFormType.php" />
         <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Register/register.html.twig" />
+        <option value="$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig" />
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php" />
+        <option value="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
+        <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig" />
       </list>
     </option>
   </component>
@@ -1125,13 +1150,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="2" selection-start-line="56" selection-start-column="2" selection-end-line="56" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Tests/Controller/DefaultControllerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625">
@@ -1356,47 +1374,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-33.75">
-          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38164893">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="e#602#618#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35904256">
-          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
-          <folding>
-            <element signature="e#41#103#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1414,27 +1396,6 @@
           <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
           <folding>
             <element signature="e#36#76#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65824467">
-          <caret line="80" column="9" selection-start-line="76" selection-start-column="8" selection-end-line="80" selection-end-column="9" />
-          <folding>
-            <element signature="e#43#88#0#PHP" expanded="true" />
-            <element signature="e#587#608#1#PHP" expanded="true" />
-            <element signature="e#693#730#0#PHP" expanded="true" />
-            <element signature="e#1092#1113#1#PHP" expanded="true" />
-            <element signature="e#1157#1194#0#PHP" expanded="true" />
-            <element signature="e#1961#1978#0#PHP" expanded="true" />
-            <element signature="e#2318#2353#0#PHP" expanded="true" />
-            <element signature="e#2662#2698#0#PHP" expanded="true" />
-            <element signature="e#3356#3373#0#PHP" expanded="true" />
-            <element signature="e#3449#3485#0#PHP" expanded="true" />
-            <element signature="e#4092#4110#1#PHP" expanded="true" />
-            <element signature="e#4444#4463#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1457,9 +1418,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.4166665">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding>
+            <element signature="e#41#103#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.75">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding>
+            <element signature="e#125#182#0#PHP" expanded="true" />
+            <element signature="e#1565#1583#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.166667">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding>
+            <element signature="e#43#88#0#PHP" expanded="true" />
+            <element signature="e#587#608#1#PHP" expanded="true" />
+            <element signature="e#693#730#0#PHP" expanded="true" />
+            <element signature="e#1133#1154#1#PHP" expanded="true" />
+            <element signature="e#1198#1235#0#PHP" expanded="true" />
+            <element signature="e#2002#2019#0#PHP" expanded="true" />
+            <element signature="e#2359#2394#0#PHP" expanded="true" />
+            <element signature="e#2703#2739#0#PHP" expanded="true" />
+            <element signature="e#3397#3414#0#PHP" expanded="true" />
+            <element signature="e#3490#3526#0#PHP" expanded="true" />
+            <element signature="e#4133#4151#1#PHP" expanded="true" />
+            <element signature="e#4485#4504#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07446808">
+          <caret line="9" column="15" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+          <folding>
+            <element signature="e#602#618#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0771277">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/AuthenticationException.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0">
+        <state vertical-scroll-proportion="0.15957446">
           <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
           <folding />
         </state>
@@ -1467,22 +1496,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Resources/views/Register/register.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31914893">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.43882978">
+          <caret line="22" column="27" selection-start-line="14" selection-start-column="14" selection-end-line="22" selection-end-column="27" />
           <folding>
             <element signature="e#12#28#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php">
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39893618">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-          <folding>
-            <element signature="e#125#182#0#PHP" expanded="true" />
-            <element signature="e#2187#2205#1#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.8005319">
+          <caret line="106" column="28" selection-start-line="106" selection-start-column="28" selection-end-line="106" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -39,7 +39,7 @@ class ticketController extends Controller
     public function firstIndexAction() {
 
         $this->session = new Session();
-        $this->session->getFlashBag()->add('flash_success', 'Welcome back!');
+        $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
         $em = $this->getDoctrine()->getManager();
         $tickets = $em->getRepository('TicketBundle:ticket')->findAll();

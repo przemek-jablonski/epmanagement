@@ -36,17 +36,7 @@ class RegisterController extends Controller
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-        /*
-            $data = $form->getData();
 
-            $user = new user();
-            $user->setUsername($data['username']);
-            $user->setEmail($data['email']);
-            //$user->setPassword($this->encodePassword($user, $data['password']));
-            $user->setPassword($this->encodePassword($user, $data['plainPassword']));
-
-            $data = null;
-        */
             $user = $form->getData();
 
             $user->setPassword(
@@ -61,11 +51,7 @@ class RegisterController extends Controller
             $this->session->getFlashBag()
                 ->add('flash_success', 'Welcome! Good to have you onboard.
                 Use your newly obtained credentials to login and start tracking.');
-            /*
-            $request->getSession()->getFlashbag()
-                ->add('flash_success', 'Welcome! Good to have you onboard.
-                Use your newly obtained credentials to login and start tracking.');
-            */
+
             $url = $this->generateUrl('ticketcrud_index');
             return $this->redirect($url);
         }
