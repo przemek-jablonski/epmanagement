@@ -18,7 +18,8 @@ class AppKernel extends Kernel
             new StartBundle\StartBundle(),
             new TicketBundle\TicketBundle(),
             new UserBundle\UserBundle(),
-            new \Symfony\Bundle\AsseticBundle\AsseticBundle()
+            new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new CustomMailerBundle\CustomMailerBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

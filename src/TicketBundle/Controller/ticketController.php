@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\Session;
 use TicketBundle\Entity\ticket;
 use TicketBundle\Form\ticketType;
+use CustomMailerBundle\Controller\DefaultController;
 
 /**
  * ticket controller.
@@ -77,10 +78,17 @@ class ticketController extends Controller
 
 
             $ticket->setUserCreated($this->getUser());
+            $this->get('custommailerservice')->sendNewTicketMail($this->getUser(), $ticket);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);
             $em->flush();
+
+            /*
+            $mailer = new DefaultController();
+            $this->mailer->sendNewTicketMail($ticket->getUserCreated(), $ticket);
+*/
+
 
             $this->session = new Session();
             $this->session->getFlashBag()

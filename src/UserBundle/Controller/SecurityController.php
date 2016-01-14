@@ -15,6 +15,7 @@ class SecurityController extends Controller
      * @Template
      */
 
+  //  private $reg =
 
     public function loginAction() {
         $authenticationUtils = $this->get('security.authentication_utils');

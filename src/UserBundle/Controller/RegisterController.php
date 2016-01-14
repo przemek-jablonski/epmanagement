@@ -47,6 +47,8 @@ class RegisterController extends Controller
             $manager->persist($user);
             $manager->flush();
 
+            $this->sendRegistrationMail($user);
+
             $this->session = new Session();
             $this->session->getFlashBag()
                 ->add('flash_success', 'Welcome! Good to have you onboard.
@@ -63,6 +65,22 @@ class RegisterController extends Controller
         }
 
         return array('form' => $form->createView());
+    }
+
+    public function sendRegistrationMail(user $newUser) {
+
+        $mail = \Swift_Message::newInstance()
+            ->setSubject("Hi " . $newUser->getEmail())
+            ->setFrom('appeasyprojectmanagement@gmail.com')
+            ->setTo($newUser->getEmail())
+            ->setBcc('sharaquss@gmail.com')
+            ->setBody(
+                'Hi!
+                Thanks for registering in Easy Project Management app!
+
+                Hope you will have fun with this management tool.
+                Thanks again!');
+        $this->get('mailer')->send($mail);
     }
 
 
