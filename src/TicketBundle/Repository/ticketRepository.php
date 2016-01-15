@@ -13,14 +13,17 @@ use UserBundle\Entity\user;
  */
 class ticketRepository extends EntityRepository {
 
+
     public function findAllTicketsAdmin(){
         $this->findAll();
     }
 
-    public function findAllTicketsUser(user $user) {
+    public function findAllUpcomingTicketsUser(user $user) {
         return $this->createQueryBuilder('t')
+            ->andWhere('t.userCreated = :inputUsername')
+            ->andWhere('t.dateDeadline > :now')
             ->setParameter('inputUsername', $user->getUsername())
-            ->andWhere('t.userCreated = inputUsername')
+            ->setParameter('now', new \DateTime())
             ->getQuery()
             ->execute();
 

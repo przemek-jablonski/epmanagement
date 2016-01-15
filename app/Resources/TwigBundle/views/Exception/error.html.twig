@@ -1,0 +1,19 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/user/css/login.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <section class="login">
+        <article>
+            <h1>Woops...</h1>
+
+            <div>
+                You have just wandered into wrong side of internet.
+                Go back.
+            </div>
+        </article>
+    </section>
+{% endblock %}

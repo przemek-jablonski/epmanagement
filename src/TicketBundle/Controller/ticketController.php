@@ -28,6 +28,19 @@ class ticketController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+
+        $upcomingTicketsVisible = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTicketsUser($this->getUser());
+        /*
+        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
+
+
+        $overdueTicketsVisible = array();
+        foreach($overdueTicketsAll as $ticket)
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($overdueTicketsVisible, $ticket);
+*/
+
+        /*
         $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
         $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
         $upcomingTicketsVisible = array();
@@ -35,16 +48,15 @@ class ticketController extends Controller
 
 
 
-        foreach($upcomingTicketsAll as $ticket) {
+        foreach($upcomingTicketsAll as $ticket)
             if($ticket->getUserCreated() == $this->getUser())
                 array_push($upcomingTicketsVisible, $ticket);
-        }
 
-        foreach($overdueTicketsAll as $ticket) {
+
+        foreach($overdueTicketsAll as $ticket)
             if($ticket->getUserCreated() == $this->getUser())
                 array_push($overdueTicketsVisible, $ticket);
-        }
-
+*/
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'upcomingTickets' => $upcomingTicketsVisible,
@@ -65,15 +77,14 @@ class ticketController extends Controller
 
 
 
-        foreach($upcomingTicketsAll as $ticket) {
+        foreach($upcomingTicketsAll as $ticket)
             if($ticket->getUserCreated() == $this->getUser())
                 array_push($upcomingTicketsVisible, $ticket);
-        }
 
-        foreach($overdueTicketsAll as $ticket) {
+
+        foreach($overdueTicketsAll as $ticket)
             if($ticket->getUserCreated() == $this->getUser())
                 array_push($overdueTicketsVisible, $ticket);
-        }
 
 
 
