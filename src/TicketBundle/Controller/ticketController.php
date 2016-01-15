@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use TicketBundle\Entity\ticket;
 use TicketBundle\Form\ticketType;
 use CustomMailerBundle\Controller\DefaultController;
+use TicketBundle\Repository\ticketRepository;
 
 /**
  * ticket controller.
@@ -94,7 +95,7 @@ class ticketController extends Controller
             $this->session->getFlashBag()
                 ->add('flash_success', 'Congratulations on successfully creating a new ticket!');
 
-            return $this->redirectToRoute('ticketcrud_show', array('id' => $ticket->getId()));
+            return $this->redirectToRoute('ticketcrud_show', array('slug' => $ticket->getSlug()));
         }
 
         if($form->isSubmitted() && !$form->isValid()) {
@@ -115,11 +116,22 @@ class ticketController extends Controller
      */
     public function showAction($slug)
     {
-        $deleteForm = $this->createDeleteForm($ticket);
+//        $deleteForm = $this->createDeleteForm($ticket);
+
+        $manager = $this->getDoctrine()->getManager();
+
+
+        $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
+
+        $form = $this->createDeleteForm($ticket);
+
+        if(!$ticket) {
+            throw $this->createNotFoundException('Unable to find given ticket');
+        }
 
         return $this->render('TicketBundle:Ticket:show.html.twig', array(
             'ticket' => $ticket,
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $form->createView()
         ));
     }
 
