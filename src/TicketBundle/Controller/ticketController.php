@@ -28,7 +28,7 @@ class ticketController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
+        //$tickets = $em->getRepository('TicketBundle:ticket')->findAll();
         $visibleTickets = array();
 
         foreach($tickets as $ticket) {
@@ -122,6 +122,7 @@ class ticketController extends Controller
 
 
         $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
+
 
         $form = $this->createDeleteForm($ticket);
 

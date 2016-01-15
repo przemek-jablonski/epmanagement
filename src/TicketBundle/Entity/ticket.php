@@ -15,6 +15,13 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class ticket
 {
+
+
+    public function __construct() {
+        $this->dateDeadline = new \DateTime();
+
+    }
+
     /**
      * @var int
      *
@@ -23,6 +30,13 @@ class ticket
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="done", type="boolean")
+     */
+    private $done = false;
 
     /**
      *
