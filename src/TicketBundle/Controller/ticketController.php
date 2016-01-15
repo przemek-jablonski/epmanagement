@@ -120,6 +120,7 @@ class ticketController extends Controller
 
 
             $ticket->setUserCreated($this->getUser());
+            $ticket->setDateCreation(new \DateTime());
             $this->get('custommailerservice')->sendNewTicketMail($this->getUser(), $ticket);
 
             $em = $this->getDoctrine()->getManager();

@@ -22,7 +22,7 @@ class ticketRepository extends EntityRepository {
         return $this->createQueryBuilder('t')
             ->andWhere('t.userCreated = :inputUsername')
           //  ->andWhere('t.dateDeadline > :now')
-            ->setParameter('inputUsername', $user->getUsername())
+            ->setParameter('inputUsername', $user->getId())
             //->setParameter('now', new \DateTime())
             ->getQuery()
             ->execute();
