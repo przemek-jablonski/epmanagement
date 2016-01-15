@@ -28,39 +28,62 @@ class ticketController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        //$tickets = $em->getRepository('TicketBundle:ticket')->findAll();
-        $visibleTickets = array();
+        $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
+        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
+        $upcomingTicketsVisible = array();
+        $overdueTicketsVisible = array();
 
-        foreach($tickets as $ticket) {
+
+
+        foreach($upcomingTicketsAll as $ticket) {
             if($ticket->getUserCreated() == $this->getUser())
-                array_push($visibleTickets, $ticket);
+                array_push($upcomingTicketsVisible, $ticket);
         }
 
-        $this->session = new Session();
+        foreach($overdueTicketsAll as $ticket) {
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($overdueTicketsVisible, $ticket);
+        }
+
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'tickets' => $visibleTickets,
+            'upcomingTickets' => $upcomingTicketsVisible,
+            'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
         ));
     }
 
     public function firstIndexAction() {
 
+
+        $em = $this->getDoctrine()->getManager();
+
+        $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
+        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
+        $upcomingTicketsVisible = array();
+        $overdueTicketsVisible = array();
+
+
+
+        foreach($upcomingTicketsAll as $ticket) {
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($upcomingTicketsVisible, $ticket);
+        }
+
+        foreach($overdueTicketsAll as $ticket) {
+            if($ticket->getUserCreated() == $this->getUser())
+                array_push($overdueTicketsVisible, $ticket);
+        }
+
+
+
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
-        $em = $this->getDoctrine()->getManager();
-        $tickets = $em->getRepository('TicketBundle:ticket')->findAll();
-
-        $visibleTickets = array();
-        foreach($tickets as $ticket) {
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($visibleTickets, $ticket);
-        }
-
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'tickets' => $visibleTickets,
-            'controllerAction' => 'firstIndexAction()'
+            'upcomingTickets' => $upcomingTicketsVisible,
+            'overdueTickets' => $overdueTicketsVisible,
+            'controllerAction' => 'indexAction()'
         ));
     }
 

@@ -19,7 +19,7 @@
             lets assume that here we render all ongoing tickets
         #}
 
-        {% for ticket in tickets %}
+        {% for ticket in upcomingTickets %}
             <article>
                 <section>
                     <div class="alert alert-warning fade in">
@@ -58,6 +58,50 @@
                         <dd>{{ ticket.status }}</dd>
 
                     </dl>
+                    </div>
+                </section>
+            </article>
+        {% endfor %}
+
+        {% for ticket in overdueTickets %}
+            <article>
+                <section>
+                    <div class="alert alert-danger fade in">
+                        <h3>
+                            <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
+                        </h3>
+                        <dl>
+                            <dt>Ticket ID:</dt>
+                            <dd>{{ ticket.id }}</dd>
+
+                            <dt>Name:</dt>
+                            <dd>{{ ticket.name }}</dd>
+
+                            <dt>Desc:</dt>
+                            <dd>{{ ticket.description }}</dd>
+
+                            <dt>Creation:</dt>
+                            <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
+
+                            <dt>Deadline:</dt>
+                            <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                            <dt>Reporter:</dt>
+                            <dd>{{ ticket.userCreated.username }}</dd>
+
+                            <dt>Assignee:</dt>
+                            <dd>{{ ticket.userAssigned }}</dd>
+
+                            <dt>Project:</dt>
+                            <dd>{{ ticket.project }}</dd>
+
+                            <dt>Sprint:</dt>
+                            <dd>{{ ticket.numberPoints }}</dd>
+
+                            <dt>Status:</dt>
+                            <dd>{{ ticket.status }}</dd>
+
+                        </dl>
                     </div>
                 </section>
             </article>

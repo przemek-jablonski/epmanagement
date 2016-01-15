@@ -3,6 +3,7 @@
 namespace TicketBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use UserBundle\Entity\user;
 
 /**
  * ticketRepository
@@ -16,7 +17,12 @@ class ticketRepository extends EntityRepository {
         $this->findAll();
     }
 
-    public function findAllTicketsUser() {
+    public function findAllTicketsUser(user $user) {
+        return $this->createQueryBuilder('t')
+            ->setParameter('inputUsername', $user->getUsername())
+            ->andWhere('t.userCreated = inputUsername')
+            ->getQuery()
+            ->execute();
 
     }
 
@@ -26,28 +32,37 @@ class ticketRepository extends EntityRepository {
 
     public function testFind(){
         return $this->createQueryBuilder('t')
-            ->addOrderBy('t.time', 'ASC')
-            ->andWhere('t.time > :now')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->andWhere('t.dateDeadline > :now')
             ->setParameter('now', new \DateTime())
             ->getQuery()
             ->execute();
     }
 
-
-    public function findAllTicketsUpcoming() {
-
+    public function findAllUpcomingTickets() {
+        return $this->createQueryBuilder('t')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->andWhere('t.dateDeadline > :now')
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
     }
 
-    public function findAllTicketsOverdue() {
-
+    public function findAllOverdueTickets() {
+        return $this->createQueryBuilder('t')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->andWhere('t.dateDeadline <= :now')
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
     }
 
-    public function findAllTicketsUpcomingSorted() {
-
+    public function findAllDoneTickets() {
+        //todo when some enum will apear in ORM
     }
 
-    public function findAllTicketsOverdueSorted() {
-
+    public function findAllNotDoneTickets() {
+        //todo when some enum will apear in ORM
     }
 
 }
