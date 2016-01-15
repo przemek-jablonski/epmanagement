@@ -2,6 +2,7 @@
 
 namespace TicketBundle\Controller;
 
+use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -26,19 +27,25 @@ class ticketController extends Controller
      */
     public function indexAction()
     {
+        /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
+        /** @var \Doctrine\ORM\EntityRepository $repository */
+        $repository = $em->getRepository('TicketBundle:ticket');
 
-        $upcomingTicketsVisible = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTicketsUser($this->getUser());
+
+        $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
+        $overdueTicketsVisible = array();
+
+
         /*
         $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
-
 
         $overdueTicketsVisible = array();
         foreach($overdueTicketsAll as $ticket)
             if($ticket->getUserCreated() == $this->getUser())
                 array_push($overdueTicketsVisible, $ticket);
-*/
+        */
 
         /*
         $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
