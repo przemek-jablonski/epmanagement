@@ -113,7 +113,7 @@ class ticketController extends Controller
      * Finds and displays a ticket entity.
      *
      */
-    public function showAction(ticket $ticket)
+    public function showAction($slug)
     {
         $deleteForm = $this->createDeleteForm($ticket);
 

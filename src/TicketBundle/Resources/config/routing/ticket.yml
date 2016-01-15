@@ -9,7 +9,7 @@ ticketcrud_firstindex:
     methods:  GET
 
 ticketcrud_show:
-    path:     /{id}/show
+    path:     /{slug}/show
     defaults: { _controller: "TicketBundle:ticket:show" }
     methods:  GET
 

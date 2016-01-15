@@ -5,6 +5,7 @@ namespace TicketBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use UserBundle\Entity\user;
 use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * ticket
@@ -95,6 +96,21 @@ class ticket
      * @ORM\Column(name="status", type="string", length=20)
      */
     private $status;
+
+
+    /**
+     * @ORM\Column(name="slug", unique=true)
+     * @Gedmo\Slug(fields={"id", "name",}, updatable=false)
+     */
+    private $slug;
+
+
+
+
+
+
+
+
 
 
     /**
@@ -321,6 +337,24 @@ class ticket
     public function getStatus()
     {
         return $this->status;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }
 
