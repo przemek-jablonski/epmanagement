@@ -11,7 +11,7 @@ use TicketBundle\Entity\ticket;
 use TicketBundle\Form\ticketType;
 use CustomMailerBundle\Controller\DefaultController;
 use TicketBundle\Repository\ticketRepository;
-
+use AestheticBundle\Containers\BootstrapNavbarElements;
 /**
  * ticket controller.
  *
@@ -37,8 +37,25 @@ class ticketController extends Controller
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
+        $navbar = array();
+
+        array_push($navbar, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbar, (new BootstrapNavbarElements())->getElementNew());
+        array_push($navbar, (new BootstrapNavbarElements())->getElementSort());
+        array_push($navbar, (new BootstrapNavbarElements())->getElementSearch());
+        array_push($navbar, (new BootstrapNavbarElements())->getElementHelper());
+
+
+        /*
+        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-home', 'list'));
+        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-signal', 'sort'));
+        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-search', 'search'));
+        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-question-sign', 'helper'));
+        */
+
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
+            'navbarLeft' => $navbar,
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'

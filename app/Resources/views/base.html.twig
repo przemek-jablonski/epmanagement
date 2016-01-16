@@ -33,56 +33,52 @@
     </head>
     <body>
 
-    {% block bootstrap_navbar %}
-        {#
-            forcing bootstrap top page navigation bar (navbar) globally
-        #}
+    {#{% block bootstrap_navbar %}#}
+        {##}
+            {#forcing bootstrap top page navigation bar (navbar) globally#}
+        {##}
+        {#<nav class="navbar navbar-inverse">#}
+            {#<div class="container-fluid">#}
+                {#<div class="navbar-header">#}
+                    {#<a class="navbar-brand">easyProjectManagement:</a>#}
+                {#</div>  #}
+                {#<ul class="nav navbar-nav">#}
+                    {#<li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement</a></li>#}
+                    {#<li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-list-alt"></span> list</a></li>#}
+                    {#<li><a href="#"><span class="glyphicon glyphicon-signal"></span> sort</a></li>#}
+                    {#<li><a href="#"><span class="glyphicon glyphicon-search"></span> search</a></li>#}
+                    {#<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> helper</a></li>#}
+                {#</ul>#}
+                {#<ul class="nav navbar-nav navbar-right">#}
+                    {#<li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>#}
+                    {#<li><a href="{{ path('user_register') }}"><span class="glyphicon glyphicon-user"></span> register</a></li>#}
+                    {#<li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login</a></li>#}
+                {#</ul>#}
+            {#</div>#}
+        {#</nav>#}
+    {#{% endblock %}#}
+
+    {% block bootstrap_navbar_loop %}
+
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-            {#    <div class="navbar-header">
-                    <a class="navbar-brand">easyProjectManagement:</a>
-                </div>  #}
+
                 <ul class="nav navbar-nav">
                     <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement</a></li>
-                    <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-list-alt"></span> list</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> sort</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> search</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> helper</a></li>
+                    {% for element in navbarLeft %}
+                        <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
+                    {% endfor %}
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>
                     <li><a href="{{ path('user_register') }}"><span class="glyphicon glyphicon-user"></span> register</a></li>
-                    <li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login</a></li>
+                    <li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login/logout</a></li>
                 </ul>
             </div>
         </nav>
     {% endblock %}
 
-    {% block bootstrap_navbar_loop %}
-        {#
-            forcing bootstrap top page navigation bar (navbar) globally
-        #}
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                {#    <div class="navbar-header">
-                        <a class="navbar-brand">easyProjectManagement:</a>
-                    </div>  #}
-                <ul class="nav navbar-nav">
-                    {% for  %}
-                    <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement</a></li>
-                    <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-list-alt"></span> list</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> sort</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> search</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> helper</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>
-                    <li><a href="{{ path('user_register') }}"><span class="glyphicon glyphicon-user"></span> register</a></li>
-                    <li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login</a></li>
-                </ul>
-            </div>
-        </nav>
-    {% endblock %}
 
     {% block bootstrap_flashmessages %}
         {#
