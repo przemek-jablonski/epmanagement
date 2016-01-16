@@ -1,13 +1,3 @@
-aesthetic:
-    resource: "@AestheticBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
-custom_mailer:
-    resource: "@CustomMailerBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,3 +1,0 @@
-start_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: StartBundle:Default:index }

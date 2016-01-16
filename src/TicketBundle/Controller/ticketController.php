@@ -36,16 +36,10 @@ class ticketController extends Controller
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
-        $navbarLeft = array();
-        $navbarRight = array();
-
-        $navbar = new BootstrapNavbar();
-        $navbar->createNavbarIndex($navbarLeft, $navbarRight);
-
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'navbarLeft' => $navbarLeft,
-            'navbarRight' => $navbarRight,
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
@@ -63,24 +57,12 @@ class ticketController extends Controller
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
-        $navbarLeft = array();
-        $navbarRight = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSort());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSearch());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
-
-
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'navbarLeft' => $navbarLeft,
-            'navbarRight' => $navbarRight,
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
@@ -126,8 +108,8 @@ class ticketController extends Controller
         }
 
         return $this->render('TicketBundle:Ticket:new.html.twig', array(
-            'navbarLeft' => $navbarLeft,
-            'navbarRight' => $navbarRight,
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
             'ticket' => $ticket,
             'form' => $form->createView(),
         ));

@@ -1,13 +1,3 @@
-#tickets stuff here:
-
 ticket_ticketcrud:
     resource: "@TicketBundle/Resources/config/routing/ticket.yml"
-    prefix:   /ticketcrud
-
-ticket_homepage:
-    path:     /{text}
-    defaults: { _controller: TicketBundle:Default:index }
-
-ticket_test_insert:
-    path: /test/insertTicket
-    defaults: { _controller: TicketBundle:TestInsert:insert }
+    prefix:   /
