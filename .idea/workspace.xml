@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="134b6c3f-3951-45d1-9511-ad8c0bbd7fd7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperShow.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbar.php" afterPath="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbarElements.php" afterPath="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbarElements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AestheticBundle/Containers/NavbarHelperElements.php" afterPath="$PROJECT_DIR$/src/AestheticBundle/Containers/NavbarHelperElements.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php" afterPath="$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/UserBundle/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/UserBundle/Controller/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
     </list>
     <ignored path="epmanagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +34,31 @@
     <splitter split-orientation="horizontal" split-proportion="0.41799787">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+          <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-23.913044">
-                  <caret line="107" column="68" selection-start-line="107" selection-start-column="68" selection-end-line="107" selection-end-column="68" />
+                <state vertical-scroll-proportion="0.731982">
+                  <caret line="158" column="97" selection-start-line="158" selection-start-column="97" selection-end-line="158" selection-end-column="97" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-2.826087">
+                  <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-36.173912">
+                  <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -73,11 +87,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.39977476">
-                  <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+                <state vertical-scroll-proportion="-13.565217">
+                  <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
                   <folding>
                     <element signature="e#41#88#0#PHP" expanded="true" />
                   </folding>
@@ -112,8 +126,8 @@
           <file leaf-file-name="BootstrapNavbarElements.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbarElements.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8243243">
-                  <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+                <state vertical-scroll-proportion="0.39977476">
+                  <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
                   <folding>
                     <element signature="e#1668#1848#0#PHP" expanded="false" />
                     <element signature="e#1854#2030#0#PHP" expanded="false" />
@@ -124,36 +138,6 @@
                     <element signature="e#3194#3373#0#PHP" expanded="false" />
                     <element signature="e#3379#3552#0#PHP" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="NavbarHelperElements.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/NavbarHelperElements.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-28.434782">
-                  <caret line="78" column="44" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="helperIndex.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperIndex.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.9565217">
-                  <caret line="7" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="80" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BootstrapNavbar.php" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbar.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-34.086956">
-                  <caret line="71" column="81" selection-start-line="71" selection-start-column="81" selection-end-line="71" selection-end-column="81" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -206,13 +190,11 @@
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/public/css/event.css" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/config/routing/ticket.yml" />
-        <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/public/css/events.css" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperIndex.html" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperShow.html" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperEdit.html" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Dialogue/helperNew.html" />
@@ -226,6 +208,8 @@
         <option value="$PROJECT_DIR$/src/UserBundle/Controller/RegisterController.php" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbar.php" />
         <option value="$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbarElements.php" />
+        <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -854,6 +838,102 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TicketBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TicketBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TicketBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ticket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TicketBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="epmanagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1250,20 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.434782">
-          <caret line="45" column="56" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="56" />
-          <folding>
-            <element signature="e#1280#1296#0#Twig" expanded="false" />
-            <element signature="e#1436#1452#0#Twig" expanded="false" />
-            <element signature="e#1592#1609#0#Twig" expanded="false" />
-            <element signature="e#1765#1780#0#Twig" expanded="false" />
-            <element signature="e#1934#1950#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="5.3913045">
@@ -1350,14 +1416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.073033705">
-          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6002252">
@@ -1373,14 +1431,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.913044">
-          <caret line="107" column="68" selection-start-line="107" selection-start-column="68" selection-end-line="107" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1494,17 +1544,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UserBundle/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39977476">
-          <caret line="33" column="74" selection-start-line="33" selection-start-column="74" selection-end-line="33" selection-end-column="74" />
+        <state vertical-scroll-proportion="-13.565217">
+          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
           <folding>
             <element signature="e#41#88#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.826087">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.173912">
+          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/NavbarHelperElements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-28.434782">
+        <state vertical-scroll-proportion="1.0686936">
           <caret line="78" column="44" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
           <folding />
         </state>
@@ -1512,7 +1578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-34.086956">
+        <state vertical-scroll-proportion="0.8828829">
           <caret line="71" column="81" selection-start-line="71" selection-start-column="81" selection-end-line="71" selection-end-column="81" />
           <folding />
         </state>
@@ -1520,8 +1586,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AestheticBundle/Containers/BootstrapNavbarElements.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8243243">
-          <caret line="148" column="36" selection-start-line="148" selection-start-column="36" selection-end-line="148" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.39977476">
+          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
           <folding>
             <element signature="e#1668#1848#0#PHP" expanded="false" />
             <element signature="e#1854#2030#0#PHP" expanded="false" />
@@ -1532,6 +1598,14 @@
             <element signature="e#3194#3373#0#PHP" expanded="false" />
             <element signature="e#3379#3552#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.731982">
+          <caret line="158" column="97" selection-start-line="158" selection-start-column="97" selection-end-line="158" selection-end-column="97" />
+          <folding />
         </state>
       </provider>
     </entry>

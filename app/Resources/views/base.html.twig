@@ -14,7 +14,7 @@
 
 
             {% block javascripts %}
-                <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+                {#<script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>#}
                 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
             {% endblock %}
 
@@ -138,6 +138,7 @@
     {% block bootstrap_flashmessages %}
             {% if app.session.flashBag.has('flash_success') %}
                 <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {% for message in app.session.flashbag.get('flash_success') %}
                         {{ message }}
                     {% endfor %}
@@ -146,6 +147,7 @@
 
             {% if app.session.flashBag.has('flash_error') %}
                 <div class="alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {% for message in app.session.flashbag.get('flash_error') %}
                         {{ message }}
                     {% endfor %}
@@ -154,6 +156,7 @@
 
             {% if app.session.flashBag.has('flash_warning') %}
                 <div class="alert alert-danger fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     {% for message in app.session.flashbag.get('flash_warning') %}
                         {{ message }}
                     {% endfor %}
