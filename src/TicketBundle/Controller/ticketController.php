@@ -34,8 +34,14 @@ class ticketController extends Controller
         $repository = $em->getRepository('TicketBundle:ticket');
 
 
-        $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
-        $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+        if($this->get('security.context')->isGranted('ROLE_ADMIN'))
+        {
+            $upcomingTicketsVisible = $repository->findAllTicketsAdmin();
+            $overdueTicketsVisible = $repository->findAllTicketsAdmin();
+        } else {
+            $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
+            $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+        }
 
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(

@@ -84,8 +84,8 @@
 #}
                     <dt>Assignee:</dt>
                     <dd>
-                        {{ form_errors(form.userAssigned) }}
-                        {{ form_widget(form.userAssigned) }}
+                        {#{{ form_errors(form.userAssigned) }}#}
+                        {#{{ form_widget(form.userAssigned) }}#}
                     </dd>
 
                     <dt>Project:</dt>
@@ -101,9 +101,11 @@
                     </dd>
 
                     <dt>Status:</dt>
-                    <dd>
+                    <dd>{#
                         {{ form_errors(form.status) }}
                         {{ form_widget(form.status) }}
+                        #}
+                        TODO
                     </dd>
 
                 {# the closing </form> tag #}

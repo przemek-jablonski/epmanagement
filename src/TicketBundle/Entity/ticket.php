@@ -13,9 +13,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  * @ORM\Table(name="ticket")
  * @ORM\Entity(repositoryClass="TicketBundle\Repository\ticketRepository")
  */
-class ticket
-{
-
+class ticket {
 
     public function __construct() {
         $this->dateDeadline = new \DateTime();
@@ -32,11 +30,12 @@ class ticket
     private $id;
 
     /**
-     * @var bool
+     * @var bool $done
      *
      * @ORM\Column(name="done", type="boolean")
      */
     private $done = false;
+
 
     /**
      *
@@ -45,13 +44,6 @@ class ticket
      */
     private $userCreated;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank(message="insert userAssigned")
-     * @ORM\Column(name="user_assigned", type="string", length=15)
-     */
-    private $userAssigned;
 
     /**
      * @var \DateTime
@@ -104,15 +96,6 @@ class ticket
     private $project;
 
     /**
-     * @var string
-     *
-     * @Assert\NotBlank(message="insert ticket status")
-     * @ORM\Column(name="status", type="string", length=20)
-     */
-    private $status;
-
-
-    /**
      * @ORM\Column(name="slug", unique=true)
      * @Gedmo\Slug(fields={"id", "name",}, updatable=false)
      */
@@ -156,30 +139,6 @@ class ticket
     public function getUserCreated()
     {
         return $this->userCreated;
-    }
-
-    /**
-     * Set userAssigned
-     *
-     * @param string $userAssigned
-     *
-     * @return ticket
-     */
-    public function setUserAssigned($userAssigned)
-    {
-        $this->userAssigned = $userAssigned;
-
-        return $this;
-    }
-
-    /**
-     * Get userAssigned
-     *
-     * @return string
-     */
-    public function getUserAssigned()
-    {
-        return $this->userAssigned;
     }
 
     /**
@@ -327,27 +286,19 @@ class ticket
     }
 
     /**
-     * Set status
-     *
-     * @param string $status
-     *
-     * @return ticket
+     * @return boolean
      */
-    public function setStatus($status)
+    public function isDone()
     {
-        $this->status = $status;
-
-        return $this;
+        return $this->done;
     }
 
     /**
-     * Get status
-     *
-     * @return string
+     * @param boolean $done
      */
-    public function getStatus()
+    public function setDone($done)
     {
-        return $this->status;
+        $this->done = $done;
     }
 
 

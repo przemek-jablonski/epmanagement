@@ -15,7 +15,6 @@
 
         {% else %}
             <header id="menu"><h3>Upcoming Tickets:</h3></header>
-
             {% for ticket in upcomingTickets %}
                 <article>
                     <section>
@@ -42,8 +41,8 @@
                             <dt>Reporter:</dt>
                             <dd>{{ ticket.userCreated.username }}</dd>
 
-                            <dt>Assignee:</dt>
-                            <dd>{{ ticket.userAssigned }}</dd>
+                            {#<dt>Assignee:</dt>#}
+                            {#<dd>{{ ticket.userAssigned }}</dd>#}
 
                             <dt>Project:</dt>
                             <dd>{{ ticket.project }}</dd>
@@ -63,9 +62,10 @@
 
 
         {% if overdueTickets|length<1 %}
-            <header id="menu"><h3>No overdue Tickets!</h3></header>
+            <header id="menu"><h3>No overdue Tickets!</h3></header><br><br>
         {% else %}
-            <header id="menu"><h3>Overdue Tickets:</h3></header>
+            <header id="menu"><h3>Overdue Tickets:</h3><br><br></header>
+            <br><hr>
             {% for ticket in overdueTickets %}
                 <article>
                     <section>
@@ -92,8 +92,8 @@
                                 <dt>Reporter:</dt>
                                 <dd>{{ ticket.userCreated.username }}</dd>
 
-                                <dt>Assignee:</dt>
-                                <dd>{{ ticket.userAssigned }}</dd>
+                                {#<dt>Assignee:</dt>#}
+                                {#<dd>{{ ticket.userAssigned }}</dd>#}
 
                                 <dt>Project:</dt>
                                 <dd>{{ ticket.project }}</dd>

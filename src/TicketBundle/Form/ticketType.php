@@ -3,6 +3,7 @@
 namespace TicketBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -19,28 +20,28 @@ class ticketType extends AbstractType
         $builder
             ->add('submit', SubmitType::class, array('label'=>'submit'))
      //       ->add('userCreated', 'text')
-            ->add('userAssigned', 'text')
+//            ->add('userAssigned', 'text')
      /*       ->add('dateCreation', 'datetime') */ //handled from within database
             ->add('dateDeadline', 'datetime')
             ->add('name', 'text')
             ->add('description', 'text')
             ->add('numberPoints', 'integer')
-            ->add('project')
-            ->add('status');
+            ->add('project');
+          //  ->add('status');
     }
 
     public function buildEditForm(FormBuilderInterface $builder, array $options) {
-        $builder
-            ->add('submit', SubmitType::class, array('label'=>'submit'))
-          // ->add('userCreated.username', 'text')
-            ->add('userAssigned', 'text')
-            /*       ->add('dateCreation', 'datetime') */ //handled from within database
-            ->add('dateDeadline', 'datetime')
-            ->add('name', 'text')
-            ->add('description', 'text')
-            ->add('numberPoints', 'integer')
-            ->add('project')
-            ->add('status');
+//        $builder
+//            ->add('submit', SubmitType::class, array('label'=>'submit'))
+//          // ->add('userCreated.username', 'text')
+////            ->add('userAssigned', 'text')
+//            /*       ->add('dateCreation', 'datetime') */ //handled from within database
+//            ->add('dateDeadline', 'datetime')
+//            ->add('name', 'text')
+//            ->add('description', 'text')
+//            ->add('numberPoints', 'integer')
+//            ->add('project');
+//         //   ->add('status');
     }
     
     /**

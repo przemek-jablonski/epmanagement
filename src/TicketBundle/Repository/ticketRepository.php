@@ -15,7 +15,10 @@ class ticketRepository extends EntityRepository {
 
 
     public function findAllTicketsAdmin(){
-        $this->findAll();
+        return $this->createQueryBuilder('t')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->getQuery()
+            ->execute();
     }
 
     public function findAllUpcomingTicketsUser(user $user) {
