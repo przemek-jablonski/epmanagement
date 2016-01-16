@@ -1,0 +1,8 @@
+{
+    "directory": "web\/assets\/vendor\/",
+    "name": "Ciemek",
+    "author": " <sharaquss@gmail.com>",
+    "dependencies": {
+        "bootstrap": "*"
+    }
+}

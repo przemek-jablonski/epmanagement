@@ -22,6 +22,8 @@ class AppKernel extends Kernel
             new CustomMailerBundle\CustomMailerBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new AestheticBundle\AestheticBundle(),
+            new Braincrafted\Bundle\BootstrapBundle\BraincraftedBootstrapBundle()
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

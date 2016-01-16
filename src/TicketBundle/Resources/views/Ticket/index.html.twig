@@ -7,6 +7,10 @@
         <header id="menu">
                 <h2>Your tickets in one place:</h2>
         </header>
+
+
+
+
         <hr>
         {% if upcomingTickets|length<1 %}
             <header id="menu"><h3>No upcoming Tickets!</h3></header><br><br>
@@ -58,6 +62,33 @@
             {% endfor %}
         {% endif %}
 
+        {% block javascripts %}
+            {{ parent() }}
+        <!-- Trigger the modal with a button -->
+        {#<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>#}
+        <li><a class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">MODAL</a></li>
+
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endblock %}
 
 
         {% if overdueTickets|length<1 %}

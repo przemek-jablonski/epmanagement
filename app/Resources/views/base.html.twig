@@ -8,7 +8,8 @@
                 <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/main.css') }}"/>
                 <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/event.css') }}"/>
                 <link rel="stylesheet" href= "{{ asset('bundles/ticket/css/events.css') }}"/>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+                <link rel="stylesheet" href= "{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+                <link rel="stylesheet" href= "{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}">
             {% endblock %}
 
 
@@ -93,8 +94,9 @@
         {% endblock %}
 
 
-        {% block javascripts %}
-
-        {% endblock %}
+    {% block javascripts %}
+        <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    {% endblock %}
     </body>
 </html>
