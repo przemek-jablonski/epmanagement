@@ -13,26 +13,67 @@
             {% endblock %}
 
 
+            {% block javascripts %}
+                <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+                <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            {% endblock %}
 
-{#
-        {% block stylesheets %}
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-            {% stylesheets
-                'bundles/ticket/css/event.css'
-                'bundles/ticket/css/events.css'
-                'bundles/ticket/css/main.css'
-                filter='cssrewrite'
-            %}
-                <link rel="stylesheet" href="{{ asset_url }}" />
-            {% endstylesheets %}
-
-        {% endblock %}
-
-        #}
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+
+        {#{% block helper_modal %}#}
+            {#<script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>#}
+            {#<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>#}
+            {#<!-- Trigger the modal with a button -->#}
+            {#<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>#}
+            {#<li><a class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">MODAL</a></li>#}
+            {#<a data-toggle="modal" data-target="#myModal">MODAL</a>#}
+            {#<li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement 0.1</a></li>#}
+
+            {#<!-- Modal -->#}
+            {#<div id="myModal" class="modal fade" role="dialog">#}
+
+                {#<div class="modal-dialog">#}
+
+                    {#<!-- Modal content-->#}
+                    {#<div class="modal-content">#}
+                        {#<div class="alert alert-warning">#}
+                            {#<div class="modal-header">#}
+                                {#<div class="alert alert-success">#}
+                                    {#<button type="button" class="close" data-dismiss="modal"></button>#}
+                                    {#<h4 class="modal-title">helper: all tickets view.</h4>#}
+                                {#</div>#}
+                            {#</div>#}
+
+                            {#<div class="modal-body">#}
+
+                                {#<p>Here you can see all of the tickets you've reported.</p>#}
+                                {#<br>#}
+                                {#<p>They are separated into two groups, upcoming (those which deadline is still ahead) and overdue (deadline passed).</p>#}
+                                {#<p>You can differentiate between those with deadline met and those which are yet to be done with ticket colour</p>#}
+                                {#<p>If you wish to see more information regarding given ticket, please click in the title of it.</p>#}
+                                {#<p>Should this screen be empty - that means no ticket reported by you yet. If so, every option regarding those can be found in left top bar.</p>#}
+                                {#<br>#}
+                                {#<p><b>If so - start by clicking [+NEW] in left top corner of the screen.</b></p>#}
+
+                            {#</div>#}
+
+                            {#<div class="modal-footer">#}
+                                {#<div class="alert alert-success">#}
+                                    {#<button type="button" class="btn btn-success" data-dismiss="modal">got it!</button>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#{% endblock %}#}
+
+
+
 
     {% block bootstrap_navbar_loop %}
         <nav class="navbar navbar-inverse">
@@ -42,11 +83,44 @@
                     <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement 0.1</a></li>
                     {% if navbarLeft is defined %}
                         {% for element in navbarLeft %}
-                            <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
+                                <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
                         {% endfor %}
                     {% endif %}
 
+                    {% if helper is defined %}
+                        <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
+                        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                        <li><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-question-sign"></span>helper</a></li>
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <div class="modal-content">
+                                    <div class="alert alert-warning">
+                                        <div class="modal-header">
+                                            <div class="alert alert-success">
+                                                <button type="button" class="close" data-dismiss="modal"></button>
+                                                {#<h4 class="modal-title">helper: all tickets view.</h4>#}
+                                                  <h4 class="modal-title">{{ helper.helpTitle }}</h4>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            {{ helper.helpText | raw}}
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div class="alert alert-success">
+                                                <button type="button" class="btn btn-success" data-dismiss="modal">got it!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
                 </ul>
+
                 <ul class="nav navbar-nav navbar-right">
                     {% if navbarRight is defined %}
                         {% for element in navbarRight %}
@@ -54,6 +128,7 @@
                         {% endfor %}
                     {% endif %}
                 </ul>
+
             </div>
         </nav>
     {% endblock %}
@@ -61,7 +136,6 @@
 
 
     {% block bootstrap_flashmessages %}
-
             {% if app.session.flashBag.has('flash_success') %}
                 <div class="alert alert-success fade in">
                     {% for message in app.session.flashbag.get('flash_success') %}
@@ -85,18 +159,19 @@
                     {% endfor %}
                 </div>
             {% endif %}
+    {% endblock %}
+
+
+
+
+
+
+
+    {% block body %}
 
     {% endblock %}
 
 
-        {% block body %}
 
-        {% endblock %}
-
-
-    {% block javascripts %}
-        <script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    {% endblock %}
     </body>
 </html>

@@ -26,7 +26,6 @@ class BootstrapNavbar {
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSort());
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSearch());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
@@ -36,7 +35,6 @@ class BootstrapNavbar {
         $navbarLeft = array();
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
@@ -44,20 +42,17 @@ class BootstrapNavbar {
     public function createNavbarEditLeft(){
         $navbarLeft = array();
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
     public function createNavbarNewLeft() {
         $navbarLeft = array();
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
     public function createNavbarRegisterLeft() {
         $navbarLeft = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
@@ -69,7 +64,6 @@ class BootstrapNavbar {
 
     public function createNavbarLoginLeft() {
         $navbarLeft = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 

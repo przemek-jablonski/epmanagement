@@ -13,6 +13,7 @@ use CustomMailerBundle\Controller\DefaultController;
 use TicketBundle\Repository\ticketRepository;
 use AestheticBundle\Containers\BootstrapNavbarElements;
 use AestheticBundle\Containers\BootstrapNavbar;
+use AestheticBundle\Containers\NavbarHelperElements;
 /**
  * ticket controller.
  *
@@ -38,12 +39,15 @@ class ticketController extends Controller
 
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
+            'helper' => (new NavbarHelperElements())->createHelperIndex(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
         ));
+
+
     }
 
     public function firstIndexAction() {
