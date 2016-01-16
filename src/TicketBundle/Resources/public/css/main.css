@@ -13,7 +13,7 @@ body {
 #menu a.link {
     color:#fff;
     font-size:18px;
-    font-family:Helvetica;
+    font-family:HelveticaNeue-Light;
     padding:0px 4px;
     position:relative;
     text-decoration:none;
@@ -42,7 +42,7 @@ body {
 }
 
 .button {
-    font-family:Helvetica;
+    font-family:HelveticaNeue-Light;
     background:#fff;
     border:1px solid #ccc;
     text-decoration:none;

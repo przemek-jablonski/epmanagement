@@ -37,25 +37,22 @@ class ticketController extends Controller
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
-        $navbar = array();
+        $navbarLeft = array();
+        $navbarRight = array();
 
-        array_push($navbar, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbar, (new BootstrapNavbarElements())->getElementNew());
-        array_push($navbar, (new BootstrapNavbarElements())->getElementSort());
-        array_push($navbar, (new BootstrapNavbarElements())->getElementSearch());
-        array_push($navbar, (new BootstrapNavbarElements())->getElementHelper());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSort());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSearch());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
 
-
-        /*
-        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-home', 'list'));
-        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-signal', 'sort'));
-        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-search', 'search'));
-        array_push($navbar, new BootstrapNavbarElements('ticketcrud_index', 'glyphicon-question-sign', 'helper'));
-        */
-
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'navbarLeft' => $navbar,
+            'navbarLeft' => $navbarLeft,
+            'navbarRight' => $navbarRight,
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'

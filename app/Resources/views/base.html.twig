@@ -65,15 +65,19 @@
 
                 <ul class="nav navbar-nav">
                     <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement</a></li>
-                    {% for element in navbarLeft %}
-                        <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
-                    {% endfor %}
+                    {% if navbarLeft is defined %}
+                        {% for element in navbarLeft %}
+                            <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
+                        {% endfor %}
+                    {% endif %}
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>
-                    <li><a href="{{ path('user_register') }}"><span class="glyphicon glyphicon-user"></span> register</a></li>
-                    <li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login/logout</a></li>
+                    {% if navbarRight is defined %}
+                        {% for element in navbarRight %}
+                            <li><a href={{ path( element.link ) }}><span class="{{ element.glyphicon }}"></span>{{ element.title }}</a></li>
+                        {% endfor %}
+                    {% endif %}
                 </ul>
             </div>
         </nav>

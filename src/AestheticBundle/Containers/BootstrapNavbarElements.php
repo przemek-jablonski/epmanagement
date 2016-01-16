@@ -156,7 +156,7 @@ class BootstrapNavbarElements
     public function getElementLogout() {
         $this->title = 'logout';
         $this->glyphicon = 'glyphicon-off';
-        $this->link = 'user_logout';
+        $this->link = 'logout';
         return $this;
     }
 

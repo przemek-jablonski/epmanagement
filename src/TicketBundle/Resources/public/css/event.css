@@ -112,7 +112,7 @@
     border-bottom:1px solid #eee;
 
     color:#666666;
-    font-family:Tahoma;
+    font-family:HelveticaNeue-Light;
     font-weight:normal;
     font-size:30px;
     text-decoration:none;
@@ -130,7 +130,7 @@
     font-size:24px;
     color:#363636;
     margin-bottom:10px;
-    font-family:Arial;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-show article section dd {
