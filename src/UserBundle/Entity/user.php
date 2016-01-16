@@ -192,6 +192,7 @@ class user implements UserInterface, \Serializable
     {
         if($this->username == 'admin')
             return array_unique(array('ROLE_ADMIN'));
+        return $this->roles;
 
     }
 

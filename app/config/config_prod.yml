@@ -25,3 +25,9 @@ monolog:
             level: debug
         console:
             type:  console
+
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true

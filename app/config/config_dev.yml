@@ -45,3 +45,9 @@ swiftmailer:
     transport: gmail
     username: appeasyprojectmanagement
     password: projectmanagement
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable: true
+
