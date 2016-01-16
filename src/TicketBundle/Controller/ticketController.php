@@ -12,21 +12,20 @@ use TicketBundle\Form\ticketType;
 use CustomMailerBundle\Controller\DefaultController;
 use TicketBundle\Repository\ticketRepository;
 use AestheticBundle\Containers\BootstrapNavbarElements;
+use AestheticBundle\Containers\BootstrapNavbar;
 /**
  * ticket controller.
  *
  */
 class ticketController extends Controller
 {
-    private $firstLogin = true;
     private $session;
 
     /**
      * Lists all ticket entities.
      *
      */
-    public function indexAction()
-    {
+    public function indexAction() {
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
@@ -40,15 +39,9 @@ class ticketController extends Controller
         $navbarLeft = array();
         $navbarRight = array();
 
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSort());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSearch());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        $navbar = new BootstrapNavbar();
+        $navbar->createNavbarIndex($navbarLeft, $navbarRight);
 
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'navbarLeft' => $navbarLeft,
@@ -60,8 +53,6 @@ class ticketController extends Controller
     }
 
     public function firstIndexAction() {
-
-
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
@@ -71,66 +62,59 @@ class ticketController extends Controller
 
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
-/*
-        $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
-        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
-        $upcomingTicketsVisible = array();
-        $overdueTicketsVisible = array();
+
+        $navbarLeft = array();
+        $navbarRight = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSort());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementSearch());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
 
 
-
-        foreach($upcomingTicketsAll as $ticket)
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($upcomingTicketsVisible, $ticket);
-
-
-        foreach($overdueTicketsAll as $ticket)
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($overdueTicketsVisible, $ticket);
-
-
-*/
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
+            'navbarLeft' => $navbarLeft,
+            'navbarRight' => $navbarRight,
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
         ));
     }
 
-    /**
-     * Creates a new ticket entity.
-     *
-     */
+
     public function newAction(Request $request)
     {
         $ticket = new ticket();
-
         $form = $this->createForm(new ticketType(), $ticket);
-
         $form->handleRequest($request);
+
+        $navbarLeft = array();
+        $navbarRight = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
+
         if ($form->isSubmitted() && $form->isValid()) {
-
-
             $ticket->setUserCreated($this->getUser());
             $ticket->setDateCreation(new \DateTime());
-            $this->get('custommailerservice')->sendNewTicketMail($this->getUser(), $ticket);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);
             $em->flush();
 
-            /*
-            $mailer = new DefaultController();
-            $this->mailer->sendNewTicketMail($ticket->getUserCreated(), $ticket);
-*/
-
-
             $this->session = new Session();
             $this->session->getFlashBag()
                 ->add('flash_success', 'Congratulations on successfully creating a new ticket!');
+
+            $this->get('custommailerservice')->sendNewTicketMail($this->getUser(), $ticket);
 
             return $this->redirectToRoute('ticketcrud_show', array('slug' => $ticket->getSlug()));
         }
@@ -142,32 +126,39 @@ class ticketController extends Controller
         }
 
         return $this->render('TicketBundle:Ticket:new.html.twig', array(
+            'navbarLeft' => $navbarLeft,
+            'navbarRight' => $navbarRight,
             'ticket' => $ticket,
             'form' => $form->createView(),
         ));
     }
 
-    /**
-     * Finds and displays a ticket entity.
-     *
-     */
-    public function showAction($slug)
-    {
-//        $deleteForm = $this->createDeleteForm($ticket);
+
+    public function showAction($slug) {
 
         $manager = $this->getDoctrine()->getManager();
 
-
         $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
-
 
         $form = $this->createDeleteForm($ticket);
 
-        if(!$ticket) {
-            throw $this->createNotFoundException('Unable to find given ticket');
-        }
+        if(!$ticket) throw $this->createNotFoundException('Unable to find given ticket');
+
+
+        $navbarLeft = array();
+        $navbarRight = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
+      //  array_push($navbarLeft, (new BootstrapNavbarElements())->getElementEdit());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
+
 
         return $this->render('TicketBundle:Ticket:show.html.twig', array(
+            'navbarLeft' => $navbarLeft,
+            'navbarRight' => $navbarRight,
             'ticket' => $ticket,
             'delete_form' => $form->createView()
         ));
@@ -191,7 +182,17 @@ class ticketController extends Controller
             return $this->redirectToRoute('ticketcrud_edit', array('id' => $ticket->getId()));
         }
 
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
+
         return $this->render('TicketBundle:Ticket:edit.html.twig', array(
+            'navbarLeft' => $navbarLeft,
+            'navbarRight' => $navbarRight,
             'ticket' => $ticket,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -231,4 +232,6 @@ class ticketController extends Controller
             ->getForm()
         ;
     }
+
+
 }

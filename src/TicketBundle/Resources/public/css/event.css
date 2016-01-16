@@ -17,6 +17,7 @@
     margin-bottom:20px;
     float:left;
     width:100%;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-show article .map-container {
@@ -26,6 +27,7 @@
     overflow:hidden;
     border:6px solid #fff;
     background:#fff;
+    font-family:HelveticaNeue-Light;
 
     -webkit-border-radius:150px;
        -moz-border-radius:150px;
@@ -52,6 +54,7 @@
     float:right;
     background:#fff;
     position:relative;
+    font-family:HelveticaNeue-Light;
 
     -webkit-border-radius:5px;
            -moz-border-radius:5px;
@@ -138,6 +141,7 @@
     margin-left:50px;
     color:#666666;
     font-weight:normal !important;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-show ul.users {
@@ -146,6 +150,7 @@
     padding:0px;
     padding-left:0px;
     line-height:28px;
+    font-family:HelveticaNeue-Light;
 }
 .event-show ul.users li {
     float:left;
@@ -175,13 +180,16 @@
             box-shadow:0px 0px 5px #ccc;
     font-size:14px;
     padding:5px;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-edit textarea {
     height:200px;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-edit h1 input[type=text] {
     float:left;
     width:510px;
+    font-family:HelveticaNeue-Light;
 }

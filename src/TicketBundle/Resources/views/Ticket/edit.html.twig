@@ -1,13 +1,11 @@
 {% extends 'TicketBundle::layout.html.twig' %}
 
 {% block body %}
+    <section class="events">
+        <h3>Here you can edit your ticket:</h3>
+    </section>
+
     <section class="event-show event-edit">
-        {#
-        <header id="menu">
-            <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to all tickets</a>
-            <a class="link" href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">show this ticket</a>
-        </header>
-#}
         <article>
             <section>
                 {# the opening <form> tag #}

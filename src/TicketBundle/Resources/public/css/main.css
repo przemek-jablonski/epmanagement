@@ -2,12 +2,14 @@ body {
     background-image: url(../images/jedi.png), url(../images/bg2.jpg);
     background-repeat: no-repeat, repeat;
     background-position: 50px 60px, 0 0;
+    font-family:HelveticaNeue-Light;
 }
 
 #menu {
     height:40px;
     margin-bottom:30px;
     padding-left:162px;
+    font-family:HelveticaNeue-Light;
 }
 
 #menu a.link {

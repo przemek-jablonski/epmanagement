@@ -5,16 +5,9 @@
     <section class="events">
 
         <header id="menu">
-                <h1>TicketList:</h1>
-                <a class="button" href="{{ path('ticketcrud_new') }}">create new ticket</a>
-                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-                    <a class="button" href="{{ path('logout') }}">logout</a>
-                {% else %}
-                    <a class="button" href="{{ path('user_login_form') }}">logout</a>
-                {% endif %}
-
+                <h3>All of your tickets in one place:</h3>
         </header>
-        <hr>
+
         {% for ticket in upcomingTickets %}
             <article>
                 <section>

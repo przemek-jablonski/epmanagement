@@ -94,9 +94,6 @@ class BootstrapNavbarElements
         $this->title = $title;
     }
 
-
-
-
     public function getElementList() {
         $this->title = 'list';
         $this->glyphicon = 'glyphicon-home';
@@ -108,6 +105,13 @@ class BootstrapNavbarElements
         $this->title = 'new';
         $this->glyphicon = 'glyphicon-plus';
         $this->link = 'ticketcrud_new';
+        return $this;
+    }
+
+    public function getElementEdit() {
+        $this->title = 'edit';
+        $this->glyphicon = 'glyphicon-indent-left';
+        $this->link = 'ticketcrud_edit';
         return $this;
     }
 

@@ -2,17 +2,22 @@
 
 {% block body %}
 
+    <section class="events">
+        <header id="menu">
+            <h3>See everything about it:</h3>
+        </header>
+    </section>
+
     <section class="event-show">
+
+
 
         <article>
             <section>
                 <h1>
                     {{ ticket.name }}
                 </h1>
-                <h2>
-                    <a class="button" href="{{ path('ticketcrud_edit', {'id': ticket.id}) }}">edit</a>
-                </h2>
-
+                <hr>
                 <dl>
                     <dt>description:</dt>
                     <dd>
@@ -40,24 +45,6 @@
 
                     <dt>Status:</dt>
                     <dd>{{ ticket.status }} </dd>
-
-                    {#
-                    <dt>where:</dt>
-                    <dd>{{ entity.location }}</dd>
-
-                    <dt>when:</dt>
-                    <dd>{{ entity.time | date('g:ia / l M j, Y') }}</dd>
-
-                    <dt>what:</dt>
-                    <dd>{{ entity.details }}</dd>
-
-                    <dt>who:</dt>
-                    <dd>
-                        <ul class="users">
-                            <li>nobody yet!</li>
-                        </ul>
-                    </dd>
-                    #}
 
                 </dl>
             </section>

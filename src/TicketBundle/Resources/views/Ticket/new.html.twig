@@ -1,13 +1,16 @@
 {% extends 'TicketBundle::layout.html.twig' %}
 
 {% block body %}
-    <section class="event-show event-edit">
+
+    <section class="events">
         <header id="menu">
-            <a class="link" href="{{ path('ticketcrud_index') }}">&larr; back to the ticket list</a>
+            <h3>Here you can create a new one:</h3>
         </header>
+    </section>
 
+
+    <section class="event-show event-edit">
         <article>
-
             <section>
             {% if not form.vars.valid %}
             <div class="alert alert-danger fade in">
