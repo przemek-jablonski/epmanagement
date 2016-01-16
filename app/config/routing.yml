@@ -1,3 +1,8 @@
+aesthetic:
+    resource: "@AestheticBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 custom_mailer:
     resource: "@CustomMailerBundle/Controller/"
     type:     annotation

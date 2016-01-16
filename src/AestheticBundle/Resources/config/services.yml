@@ -1,0 +1,4 @@
+services:
+#    aesthetic.example:
+#        class: AestheticBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

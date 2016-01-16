@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new UserBundle\UserBundle(),
             new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new CustomMailerBundle\CustomMailerBundle(),
-            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle()
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new AestheticBundle\AestheticBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {
