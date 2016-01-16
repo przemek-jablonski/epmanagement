@@ -147,6 +147,7 @@ class ticketController extends Controller
         ));
     }
 
+
     /**
      * Displays a form to edit an existing ticket entity.
      *
@@ -161,10 +162,20 @@ class ticketController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($ticket);
             $em->flush();
+            $this->session = new Session();
+            $this->session->getFlashBag()
+                ->add('flash_success', 'Your ticket was succesfully altered and changes were saved. Your ticket now looks like this:');
 
-            return $this->redirectToRoute('ticketcrud_edit', array('id' => $ticket->getId()));
+            return $this->redirectToRoute('ticketcrud_show', array('slug' => $ticket->getSlug()));
+        }
+        else if ($editForm->isSubmitted() && !$editForm->isValid()) {
+            $this->session = new Session();
+            $this->session->getFlashBag()
+                ->add('flash_error', 'Something went wrong with processing your edit. Try again, please!');
         }
 
+        $navbarLeft = array();
+        $navbarRight = array();
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
@@ -181,6 +192,7 @@ class ticketController extends Controller
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
 
     /**
      * Deletes a ticket entity.

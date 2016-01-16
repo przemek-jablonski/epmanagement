@@ -13,7 +13,9 @@
             <section>
                 <h1>
                     {{ ticket.name }}
+                    <a href = "{{ path('ticketcrud_edit', {'id': ticket.id}) }}" button type="button" class="btn btn-warning pull-right">edit</a>
                 </h1>
+
                 <hr>
                 <dl>
                     <dt>description:</dt>

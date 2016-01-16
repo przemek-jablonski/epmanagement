@@ -167,10 +167,11 @@
 }
 
 .event-edit button {
-    float:left;
-    font-size:18px !important;
+    float:right;
+    font-size:24px !important;
     margin-top:30px;
     margin-right:10px;
+    font-family:HelveticaNeue-Light;
 }
 
 .event-edit input[type=text], .event-edit textarea {
