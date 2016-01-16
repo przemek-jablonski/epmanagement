@@ -66,6 +66,7 @@ class ticketController extends Controller
 
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
+            'helper' => (new NavbarHelperElements())->createHelperIndex(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
@@ -86,6 +87,7 @@ class ticketController extends Controller
 
 
         return $this->render('TicketBundle:Ticket:show.html.twig', array(
+            'helper' => (new NavbarHelperElements())->createHelperShow(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarShowLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'ticket' => $ticket,
@@ -124,6 +126,7 @@ class ticketController extends Controller
         }
 
         return $this->render('TicketBundle:Ticket:new.html.twig', array(
+            'helper' => (new NavbarHelperElements())->createHelperNew(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarNewLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'ticket' => $ticket,
@@ -161,6 +164,7 @@ class ticketController extends Controller
 
 
         return $this->render('TicketBundle:Ticket:edit.html.twig', array(
+            'helper' => (new NavbarHelperElements())->createHelperEdit(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarEditLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'ticket' => $ticket,

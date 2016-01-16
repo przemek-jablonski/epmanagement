@@ -146,7 +146,7 @@ class BootstrapNavbarElements
     public function getElementRegister() {
         $this->title = 'register';
         $this->glyphicon = 'glyphicon-asterisk';
-        $this->link = 'ticketcrud_index';
+        $this->link = 'user_register';
         return $this;
     }
 

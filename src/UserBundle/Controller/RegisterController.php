@@ -9,6 +9,7 @@
 namespace UserBundle\Controller;
 
 use AestheticBundle\Containers\BootstrapNavbar;
+use AestheticBundle\Containers\NavbarHelperElements;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -73,6 +74,7 @@ class RegisterController extends Controller
             'form' => $form->createView(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarRegisterLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarRegisterRight(),
+            'helper' => (new NavbarHelperElements())->createHelperRegister()
         );
     }
 

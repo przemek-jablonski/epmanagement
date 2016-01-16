@@ -68,7 +68,9 @@ class BootstrapNavbar {
     }
 
     public function createNavbarLoginRight() {
-        return $this->createNavbarRegisterRight();
+        $navbarRight = array();
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
+        return $navbarRight;
     }
 
 }

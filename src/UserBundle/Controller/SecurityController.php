@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\Session\Session;
+use AestheticBundle\Containers\NavbarHelperElements;
 
 class SecurityController extends Controller
 {
@@ -28,6 +29,7 @@ class SecurityController extends Controller
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return array(
+                'helper' => (new NavbarHelperElements())->createHelperLogin(),
                 'navbarLeft' => (new BootstrapNavbar())->createNavbarLoginLeft(),
                 'navbarRight' => (new BootstrapNavbar())->createNavbarLoginRight(),
                 'last_username' => $lastUsername,
@@ -48,6 +50,7 @@ class SecurityController extends Controller
             ->add('flash_error', 'Oops! Your username or password does not match or exist. Try again or register, please.');
 
         return array(
+            'helper' => (new NavbarHelperElements())->createHelperLogin(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarLoginLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarLoginRight(),
             'last_username' => $lastUsername,

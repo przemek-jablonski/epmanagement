@@ -55,18 +55,44 @@ class NavbarHelperElements {
     public function createHelperIndex() {
         $this->helpTitle = "index view";
         $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperIndex.html'));
-//        $this->helpText = <<<MY_HTML
-//<p>Here you can see all of the tickets you've reported.</p>
-//<br>
-//<p>They are separated into two groups, upcoming (those which deadline is still ahead) and overdue (deadline passed).</p>
-//<p>You can differentiate between those with deadline met and those which are yet to be done with ticket colour</p>
-//<p>If you wish to see more information regarding given ticket, please click in the title of it.</p>
-//<p>Should this screen be empty - that means no ticket reported by you yet. If so, every option regarding those can be found in left top bar.</p>
-//<br>
-//<p><b>If so - start by clicking [+NEW] in left top corner of the screen.</b></p>
-//MY_HTML;
-
-
         return $this;
     }
+
+    public function createHelperEdit() {
+        $this->helpTitle = "edit view";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperEdit.html'));
+        return $this;
+    }
+
+    public function createHelperLogin() {
+        $this->helpTitle = "logging in";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperLogin.html'));
+        return $this;
+    }
+
+    public function createHelperNew() {
+        $this->helpTitle = "new ticket form";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperNew.html'));
+        return $this;
+    }
+
+    public function createHelperRegister() {
+        $this->helpTitle = "user registration";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperRegister.html'));
+        return $this;
+    }
+
+    public function createHelperShow() {
+        $this->helpTitle = "single ticket view";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperShow.html'));
+        return $this;
+    }
+
+    public function createHelperUserProfile() {
+        $this->helpTitle = "user profile screen";
+        $this->helpText = (file_get_contents('/Users/Ciemek/dev/projects/newSymfony/epmanagement/src/AestheticBundle/Dialogue/helperUserProfile.html'));
+        return $this;
+    }
+
+
 }
