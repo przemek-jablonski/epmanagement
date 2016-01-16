@@ -24,7 +24,6 @@ security:
             form_login:
                 check_path: user_login_check
                 login_path: user_login_form
-                failure_path:
             logout:
                 path:   logout
                 target: ticketcrud_firstindex      #route for landing on homepage after logIN (what in the actual fuck)

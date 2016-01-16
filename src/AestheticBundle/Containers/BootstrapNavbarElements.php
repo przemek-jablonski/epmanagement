@@ -139,7 +139,7 @@ class BootstrapNavbarElements
     public function getElementUserProfile() {
         $this->title = 'profile';
         $this->glyphicon = 'glyphicon-user';
-        $this->link = 'ticketcrud_index';
+        $this->link = 'user_profile';
         return $this;
     }
 

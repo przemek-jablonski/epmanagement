@@ -9,9 +9,6 @@
     </section>
 
     <section class="event-show">
-
-
-
         <article>
             <section>
                 <h1>
@@ -20,9 +17,7 @@
                 <hr>
                 <dl>
                     <dt>description:</dt>
-                    <dd>
-                        {{ ticket.description }}
-                    </dd>
+                    <dd>{{ ticket.description }}</dd>
 
                     <dt>Creation:</dt>
                     <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
@@ -31,7 +26,6 @@
                     <dd>{{ ticket.dateDeadline | date("Y-m-d H:i:s") }}</dd>
 
                     <dt>Reporter:</dt>
-
                     <dd>{{ ticket.userCreated.username }} </dd>
 
                     <dt>Assignee:</dt>

@@ -1,0 +1,41 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <section class="events">
+        <header id="menu">
+            <h3>Here is everything about you:</h3>
+        </header>
+    </section>
+
+    <section class="event-show">
+        <article>
+            <section>
+                <h1>
+                  {{ user.username }}
+                </h1>
+                <br>
+                <dl>
+                    <dt>username:</dt>
+                    <dd>{{ user.username }}</dd>
+
+                    <dt>email adress:</dt>
+                    <dd>{{ user.email }}</dd>
+
+                    <dt>tickets overall:</dt>
+                    <dd>TODO</dd>
+
+                    <dt>tickets active:</dt>
+                    <dd>TODO</dd>
+
+                    <dt>tickets done:</dt>
+                    <dd>TODO</dd>
+
+                    <dt>tickets overdue:</dt>
+                    <dd>TODO</dd>
+                </dl>
+            </section>
+        </article>
+    </section>
+
+{% endblock %}

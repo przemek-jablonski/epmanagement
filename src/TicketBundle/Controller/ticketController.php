@@ -47,6 +47,9 @@ class ticketController extends Controller
     }
 
     public function firstIndexAction() {
+        $this->session = new Session();
+        $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
+
         /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
@@ -57,8 +60,6 @@ class ticketController extends Controller
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
         $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
-        $this->session = new Session();
-        $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),

@@ -18,3 +18,7 @@ user_register:
     resource: "@UserBundle/Controller/RegisterController.php"
     prefix:   /
     type:     annotation
+
+user_profile:
+    path:     /profile
+    defaults:  { _controller: UserBundle:User:profile }
