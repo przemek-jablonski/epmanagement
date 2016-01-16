@@ -39,7 +39,7 @@ class ticketController extends Controller
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
-            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
@@ -63,27 +63,38 @@ class ticketController extends Controller
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
-            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
         ));
     }
 
+    public function showAction($slug) {
 
-    public function newAction(Request $request)
-    {
+        $manager = $this->getDoctrine()->getManager();
+
+        $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
+
+        $form = $this->createDeleteForm($ticket);
+
+        if(!$ticket) throw $this->createNotFoundException('Unable to find given ticket');
+
+
+        return $this->render('TicketBundle:Ticket:show.html.twig', array(
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarShowLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
+            'ticket' => $ticket,
+            'delete_form' => $form->createView()
+        ));
+    }
+
+
+    public function newAction(Request $request) {
+
         $ticket = new ticket();
         $form = $this->createForm(new ticketType(), $ticket);
         $form->handleRequest($request);
-
-        $navbarLeft = array();
-        $navbarRight = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
 
         if ($form->isSubmitted() && $form->isValid()) {
             $ticket->setUserCreated($this->getUser());
@@ -109,41 +120,10 @@ class ticketController extends Controller
         }
 
         return $this->render('TicketBundle:Ticket:new.html.twig', array(
-            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
-            'navbarRight' => (new BootstrapNavbar())->createNavbarIndexRight(),
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarNewLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'ticket' => $ticket,
             'form' => $form->createView(),
-        ));
-    }
-
-
-    public function showAction($slug) {
-
-        $manager = $this->getDoctrine()->getManager();
-
-        $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
-
-        $form = $this->createDeleteForm($ticket);
-
-        if(!$ticket) throw $this->createNotFoundException('Unable to find given ticket');
-
-
-        $navbarLeft = array();
-        $navbarRight = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
-      //  array_push($navbarLeft, (new BootstrapNavbarElements())->getElementEdit());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
-
-
-        return $this->render('TicketBundle:Ticket:show.html.twig', array(
-            'navbarLeft' => $navbarLeft,
-            'navbarRight' => $navbarRight,
-            'ticket' => $ticket,
-            'delete_form' => $form->createView()
         ));
     }
 
@@ -174,19 +154,11 @@ class ticketController extends Controller
                 ->add('flash_error', 'Something went wrong with processing your edit. Try again, please!');
         }
 
-        $navbarLeft = array();
-        $navbarRight = array();
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
-        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
 
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementRegister());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
 
         return $this->render('TicketBundle:Ticket:edit.html.twig', array(
-            'navbarLeft' => $navbarLeft,
-            'navbarRight' => $navbarRight,
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarEditLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
             'ticket' => $ticket,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

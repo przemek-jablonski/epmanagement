@@ -1,6 +1,6 @@
 .events {
-    width:500px;
-    margin:50px auto;
+    width:485px;
+    margin:25px auto;
 }
 
 .events article {
@@ -126,7 +126,7 @@
 .events article section dl dt {
     width:60px;
     float:left;
-    font-weight:bold;
+    font-weight: lighter;
     margin-bottom:3px;
 }
 
@@ -134,4 +134,5 @@
     width:440px;
     margin-left:60px;
     margin-bottom:3px;
+    font-weight:bold;
 }

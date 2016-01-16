@@ -26,4 +26,4 @@ ticketcrud_edit:
 ticketcrud_delete:
     path:     /{id}/delete
     defaults: { _controller: "TicketBundle:ticket:delete" }
-    methods:  DELETE
+    methods:  [GET,POST]

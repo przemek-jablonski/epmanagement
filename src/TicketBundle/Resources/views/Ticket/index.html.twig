@@ -5,63 +5,24 @@
     <section class="events">
 
         <header id="menu">
-                <h3>All of your tickets in one place:</h3>
+                <h2>Your tickets in one place:</h2>
         </header>
+        <hr>
+        {% if upcomingTickets|length<1 %}
+            <header id="menu"><h3>No upcoming Tickets!</h3></header><br><br>
 
-        {% for ticket in upcomingTickets %}
-            <article>
-                <section>
-                    <div class="alert alert-warning fade in">
-                    <h3>
-                        <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
-                    </h3>
-                    <dl>
-                        <dt>Ticket ID:</dt>
-                        <dd>{{ ticket.id }}</dd>
-
-                        <dt>Name:</dt>
-                        <dd>{{ ticket.name }}</dd>
-
-                        <dt>Desc:</dt>
-                        <dd>{{ ticket.description }}</dd>
-
-                        <dt>Creation:</dt>
-                        <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
-
-                        <dt>Deadline:</dt>
-                        <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
-
-                        <dt>Reporter:</dt>
-                        <dd>{{ ticket.userCreated.username }}</dd>
-
-                        <dt>Assignee:</dt>
-                        <dd>{{ ticket.userAssigned }}</dd>
-
-                        <dt>Project:</dt>
-                        <dd>{{ ticket.project }}</dd>
-
-                        <dt>Sprint:</dt>
-                        <dd>{{ ticket.numberPoints }}</dd>
-
-                        <dt>Status:</dt>
-                        <dd>{{ ticket.status }}</dd>
-
-                    </dl>
-                    </div>
-                </section>
-            </article>
-        {% endfor %}
-
-        {% for ticket in overdueTickets %}
-            <article>
-                <section>
-                    <div class="alert alert-danger fade in">
+        {% else %}
+            <header id="menu"><h3>Upcoming Tickets:</h3></header>
+            {% for ticket in upcomingTickets %}
+                <article>
+                    <section>
+                        <div class="alert alert-warning fade in">
                         <h3>
                             <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
                         </h3>
                         <dl>
-                            <dt>Ticket ID:</dt>
-                            <dd>{{ ticket.id }}</dd>
+                            {#<dt>Ticket ID:</dt>#}
+                            {#<dd>{{ ticket.id }}</dd>#}
 
                             <dt>Name:</dt>
                             <dd>{{ ticket.name }}</dd>
@@ -69,8 +30,8 @@
                             <dt>Desc:</dt>
                             <dd>{{ ticket.description }}</dd>
 
-                            <dt>Creation:</dt>
-                            <dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>
+                            {#<dt>Creation:</dt>#}
+                            {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
 
                             <dt>Deadline:</dt>
                             <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
@@ -84,18 +45,68 @@
                             <dt>Project:</dt>
                             <dd>{{ ticket.project }}</dd>
 
-                            <dt>Sprint:</dt>
-                            <dd>{{ ticket.numberPoints }}</dd>
+                            {#<dt>Sprint:</dt>#}
+                            {#<dd>{{ ticket.numberPoints }}</dd>#}
 
                             <dt>Status:</dt>
-                            <dd>{{ ticket.status }}</dd>
+                            {#<dd>{{ ticket.status }}</dd>#}
 
                         </dl>
-                    </div>
-                </section>
-            </article>
-        {% endfor %}
+                        </div>
+                    </section>
+                </article>
+            {% endfor %}
+        {% endif %}
 
 
+
+        {% if overdueTickets|length<1 %}
+            <header id="menu"><h3>No overdue Tickets!</h3></header>
+        {% else %}
+            <header id="menu"><h3>Overdue Tickets:</h3></header>
+            {% for ticket in overdueTickets %}
+                <article>
+                    <section>
+                        <div class="alert alert-danger fade in">
+                            <h3>
+                                <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
+                            </h3>
+                            <dl>
+                                {#<dt>Ticket ID:</dt>#}
+                                {#<dd>{{ ticket.id }}</dd>#}
+
+                                <dt>Name:</dt>
+                                <dd>{{ ticket.name }}</dd>
+
+                                <dt>Desc:</dt>
+                                <dd>{{ ticket.description }}</dd>
+
+                                {#<dt>Creation:</dt>#}
+                                {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
+
+                                <dt>Deadline:</dt>
+                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                                <dt>Reporter:</dt>
+                                <dd>{{ ticket.userCreated.username }}</dd>
+
+                                <dt>Assignee:</dt>
+                                <dd>{{ ticket.userAssigned }}</dd>
+
+                                <dt>Project:</dt>
+                                <dd>{{ ticket.project }}</dd>
+
+                                {#<dt>Sprint:</dt>#}
+                                {#<dd>{{ ticket.numberPoints }}</dd>#}
+
+                                {#<dt>Status:</dt>#}
+                                {#<dd>{{ ticket.status }}</dd>#}
+
+                            </dl>
+                        </div>
+                    </section>
+                </article>
+            {% endfor %}
+        {% endif %}
     </section>
 {% endblock %}

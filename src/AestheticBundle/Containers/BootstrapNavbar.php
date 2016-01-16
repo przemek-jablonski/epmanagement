@@ -11,6 +11,15 @@ namespace AestheticBundle\Containers;
 
 class BootstrapNavbar {
 
+    /** standard right side of navbar */
+    public function createNavbarStandardRight() {
+        $navbarRight = array();
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
+        return $navbarRight;
+    }
+
+    /** navbar for ticket indexAction (and firstIndexAction) */
     public function createNavbarIndexLeft() {
         $navbarLeft = array();
         array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
@@ -21,22 +30,51 @@ class BootstrapNavbar {
         return $navbarLeft;
     }
 
-    public function createNavbarRight() {
-        $navbarRight = array();
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementUserProfile());
-        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogout());
-        return $navbarRight;
+
+    /** navbar for ticket showAction*/
+    public function createNavbarShowLeft() {
+        $navbarLeft = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementNew());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        return $navbarLeft;
     }
 
-    public function createNavbarIndexRight() {
-        return $this->createNavbarRight();
+
+    public function createNavbarEditLeft(){
+        $navbarLeft = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        return $navbarLeft;
     }
 
     public function createNavbarNewLeft() {
         $navbarLeft = array();
-
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementList());
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
         return $navbarLeft;
     }
 
+    public function createNavbarRegisterLeft() {
+        $navbarLeft = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        return $navbarLeft;
+    }
+
+    public function createNavbarRegisterRight() {
+        $navbarRight = array();
+        array_push($navbarRight, (new BootstrapNavbarElements())->getElementLogin());
+        return $navbarRight;
+    }
+
+    public function createNavbarLoginLeft() {
+        $navbarLeft = array();
+        array_push($navbarLeft, (new BootstrapNavbarElements())->getElementHelper());
+        return $navbarLeft;
+    }
+
+    public function createNavbarLoginRight() {
+        return $this->createNavbarRegisterRight();
+    }
 
 }

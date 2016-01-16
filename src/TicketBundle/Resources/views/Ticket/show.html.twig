@@ -13,10 +13,9 @@
             <section>
                 <h1>
                     {{ ticket.name }}
-                    <a href = "{{ path('ticketcrud_edit', {'id': ticket.id}) }}" button type="button" class="btn btn-warning pull-right">edit</a>
                 </h1>
 
-                <hr>
+                <hr><hr>
                 <dl>
                     <dt>description:</dt>
                     <dd>{{ ticket.description }}</dd>
@@ -42,6 +41,22 @@
                     <dt>Status:</dt>
                     <dd>{{ ticket.status }} </dd>
 
+                    <br><hr><hr>
+
+                    <a href = "{{ path('ticketcrud_index') }}"
+                       button type="button" class="btn btn-success pull-left">COMPLETED</a>
+
+                    <a href = "{{ path('ticketcrud_index') }}"
+                       button type="button" class="btn btn-danger pull-left">REJECTED</a>
+
+
+
+                    <a href = "{{ path('ticketcrud_delete', {'id': ticket.id}) }}"
+                       button type="button" class="btn btn-warning pull-right">delete</a>
+                    <a href = "{{ path('ticketcrud_edit', {'id': ticket.id}) }}"
+                       button type="button" class="btn btn-warning pull-right">edit</a>
+                    <a href = "{{ path('ticketcrud_index') }}"
+                       button type="button" class="btn btn-primary pull-right">back</a>
                 </dl>
             </section>
         </article>

@@ -8,6 +8,7 @@
 
 namespace UserBundle\Controller;
 
+use AestheticBundle\Containers\BootstrapNavbar;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
@@ -68,7 +69,11 @@ class RegisterController extends Controller
                 ->add('flash_error', 'Something is not right abount the credentials you have put in. See errors for info.');
         }
 
-        return array('form' => $form->createView());
+        return array(
+            'form' => $form->createView(),
+            'navbarLeft' => (new BootstrapNavbar())->createNavbarRegisterLeft(),
+            'navbarRight' => (new BootstrapNavbar())->createNavbarRegisterRight(),
+        );
     }
 
     public function sendRegistrationMail(user $newUser) {
