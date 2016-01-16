@@ -53,32 +53,33 @@ class ticketController extends Controller
             'controllerAction' => 'indexAction()'
         ));
 
-
     }
 
     public function firstIndexAction() {
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 
-        /** @var EntityManager $em */
-        $em = $this->getDoctrine()->getManager();
+//        /** @var EntityManager $em */
+//        $em = $this->getDoctrine()->getManager();
+//
+//        /** @var \Doctrine\ORM\EntityRepository $repository */
+//        $repository = $em->getRepository('TicketBundle:ticket');
+//
+//
+//        $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
+//        $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+//
+//
+//        return $this->render('TicketBundle:Ticket:index.html.twig', array(
+//            'helper' => (new NavbarHelperElements())->createHelperIndex(),
+//            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
+//            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
+//            'upcomingTickets' => $upcomingTicketsVisible,
+//            'overdueTickets' => $overdueTicketsVisible,
+//            'controllerAction' => 'indexAction()'
+//        ));
 
-        /** @var \Doctrine\ORM\EntityRepository $repository */
-        $repository = $em->getRepository('TicketBundle:ticket');
-
-
-        $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
-        $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
-
-
-        return $this->render('TicketBundle:Ticket:index.html.twig', array(
-            'helper' => (new NavbarHelperElements())->createHelperIndex(),
-            'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
-            'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
-            'upcomingTickets' => $upcomingTicketsVisible,
-            'overdueTickets' => $overdueTicketsVisible,
-            'controllerAction' => 'indexAction()'
-        ));
+        return $this->indexAction();
     }
 
     public function showAction($slug) {

@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="134b6c3f-3951-45d1-9511-ad8c0bbd7fd7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/edit.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
     </list>
     <ignored path="epmanagement.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -143,21 +135,19 @@
           <file leaf-file-name="ticketController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.46846846">
-                  <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+                <state vertical-scroll-proportion="0.8490991">
+                  <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
                   <folding>
                     <element signature="e#43#74#0#PHP" expanded="true" />
                     <element signature="e#1443#1480#0#PHP" expanded="true" />
-                    <element signature="e#2304#2325#1#PHP" expanded="true" />
-                    <element signature="e#2545#2582#0#PHP" expanded="true" />
-                    <element signature="e#3149#3170#1#PHP" expanded="true" />
-                    <element signature="e#3381#3417#0#PHP" expanded="true" />
-                    <element signature="e#4552#4569#0#PHP" expanded="true" />
-                    <element signature="e#4913#4948#0#PHP" expanded="true" />
-                    <element signature="e#6048#6065#0#PHP" expanded="true" />
-                    <element signature="e#6421#6457#0#PHP" expanded="true" />
-                    <element signature="e#7299#7317#1#PHP" expanded="true" />
-                    <element signature="e#7651#7670#0#PHP" expanded="true" />
+                    <element signature="e#3224#3245#1#PHP" expanded="true" />
+                    <element signature="e#3456#3492#0#PHP" expanded="true" />
+                    <element signature="e#4627#4644#0#PHP" expanded="true" />
+                    <element signature="e#4988#5023#0#PHP" expanded="true" />
+                    <element signature="e#6123#6140#0#PHP" expanded="true" />
+                    <element signature="e#6496#6532#0#PHP" expanded="true" />
+                    <element signature="e#7374#7392#1#PHP" expanded="true" />
+                    <element signature="e#7726#7745#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -1714,21 +1704,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46846846">
-          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.8490991">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
           <folding>
             <element signature="e#43#74#0#PHP" expanded="true" />
             <element signature="e#1443#1480#0#PHP" expanded="true" />
-            <element signature="e#2304#2325#1#PHP" expanded="true" />
-            <element signature="e#2545#2582#0#PHP" expanded="true" />
-            <element signature="e#3149#3170#1#PHP" expanded="true" />
-            <element signature="e#3381#3417#0#PHP" expanded="true" />
-            <element signature="e#4552#4569#0#PHP" expanded="true" />
-            <element signature="e#4913#4948#0#PHP" expanded="true" />
-            <element signature="e#6048#6065#0#PHP" expanded="true" />
-            <element signature="e#6421#6457#0#PHP" expanded="true" />
-            <element signature="e#7299#7317#1#PHP" expanded="true" />
-            <element signature="e#7651#7670#0#PHP" expanded="true" />
+            <element signature="e#3224#3245#1#PHP" expanded="true" />
+            <element signature="e#3456#3492#0#PHP" expanded="true" />
+            <element signature="e#4627#4644#0#PHP" expanded="true" />
+            <element signature="e#4988#5023#0#PHP" expanded="true" />
+            <element signature="e#6123#6140#0#PHP" expanded="true" />
+            <element signature="e#6496#6532#0#PHP" expanded="true" />
+            <element signature="e#7374#7392#1#PHP" expanded="true" />
+            <element signature="e#7726#7745#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
