@@ -38,6 +38,7 @@ class RegisterController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
             $user = $form->getData();
+            $user->setRoles(array('ROLE_USER'));
 
             $user->setPassword(
                 $this->encodePassword($user, $user->getPlainPassword())

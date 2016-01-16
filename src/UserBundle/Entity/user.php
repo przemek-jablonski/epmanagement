@@ -190,10 +190,9 @@ class user implements UserInterface, \Serializable
      */
     public function getRoles()
     {
-        $roles = $this->roles;
-        $roles[] = 'ROLE_USER';
+        if($this->username == 'admin')
+            return array_unique(array('ROLE_ADMIN'));
 
-        return array_unique($roles);
     }
 
     public function setRoles(array $roles) {
@@ -227,8 +226,6 @@ class user implements UserInterface, \Serializable
     {
         $this->setPlainPassword(null);
     }
-
-
 
 
 
