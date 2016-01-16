@@ -1,7 +1,7 @@
 body {
     background-image: url(../images/jedi.png), url(../images/bg2.jpg);
     background-repeat: no-repeat, repeat;
-    background-position: 55px 20px, 0 0;
+    background-position: 50px 60px, 0 0;
 }
 
 #menu {

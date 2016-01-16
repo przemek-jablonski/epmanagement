@@ -21,9 +21,20 @@ class ticketRepository extends EntityRepository {
     public function findAllUpcomingTicketsUser(user $user) {
         return $this->createQueryBuilder('t')
             ->andWhere('t.userCreated = :inputUsername')
-          //  ->andWhere('t.dateDeadline > :now')
+            ->andWhere('t.dateDeadline > :now')
             ->setParameter('inputUsername', $user->getId())
-            //->setParameter('now', new \DateTime())
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
+
+    }
+
+    public function findAllOverdueTicketsUser(user $user) {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.userCreated = :inputUsername')
+            ->andWhere('t.dateDeadline <= :now')
+            ->setParameter('inputUsername', $user->getId())
+            ->setParameter('now', new \DateTime())
             ->getQuery()
             ->execute();
 

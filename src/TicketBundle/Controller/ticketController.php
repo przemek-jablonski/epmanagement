@@ -35,35 +35,8 @@ class ticketController extends Controller
 
 
         $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
-        $overdueTicketsVisible = array();
+        $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
 
-
-        /*
-        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
-
-        $overdueTicketsVisible = array();
-        foreach($overdueTicketsAll as $ticket)
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($overdueTicketsVisible, $ticket);
-        */
-
-        /*
-        $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
-        $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
-        $upcomingTicketsVisible = array();
-        $overdueTicketsVisible = array();
-
-
-
-        foreach($upcomingTicketsAll as $ticket)
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($upcomingTicketsVisible, $ticket);
-
-
-        foreach($overdueTicketsAll as $ticket)
-            if($ticket->getUserCreated() == $this->getUser())
-                array_push($overdueTicketsVisible, $ticket);
-*/
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'upcomingTickets' => $upcomingTicketsVisible,
@@ -75,8 +48,16 @@ class ticketController extends Controller
     public function firstIndexAction() {
 
 
+        /** @var EntityManager $em */
         $em = $this->getDoctrine()->getManager();
 
+        /** @var \Doctrine\ORM\EntityRepository $repository */
+        $repository = $em->getRepository('TicketBundle:ticket');
+
+
+        $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
+        $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+/*
         $upcomingTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllUpcomingTickets();
         $overdueTicketsAll = $em->getRepository('TicketBundle:ticket')->findAllOverdueTickets();
         $upcomingTicketsVisible = array();
@@ -94,7 +75,7 @@ class ticketController extends Controller
                 array_push($overdueTicketsVisible, $ticket);
 
 
-
+*/
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
 

@@ -32,6 +32,37 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+
+    {% block bootstrap_navbar %}
+        {#
+            forcing bootstrap top page navigation bar (navbar) globally
+        #}
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+            {#    <div class="navbar-header">
+                    <a class="navbar-brand">easyProjectManagement:</a>
+                </div>  #}
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-home"></span> easyProjectManagement</a></li>
+                    <li><a href="{{ path('ticketcrud_index') }}"><span class="glyphicon glyphicon-list-alt"></span> list</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-signal"></span> sort</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-search"></span> search</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> helper</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>
+                    <li><a href="{{ path('user_register') }}"><span class="glyphicon glyphicon-user"></span> register</a></li>
+                    <li><a href="{{ path('user_login_form') }}"><span class="glyphicon glyphicon-user"></span> login</a></li>
+                </ul>
+            </div>
+        </nav>
+    {% endblock %}
+
+    {% block bootstrap_flashmessages %}
+        {#
+            interface for catching and rendering bootstrap flashbars globally
+            (if given template is extending this '::base.html.twig')
+        #}
             {% if app.session.flashBag.has('flash_success') %}
                 <div class="alert alert-success fade in">
                     {% for message in app.session.flashbag.get('flash_success') %}
@@ -55,7 +86,7 @@
                     {% endfor %}
                 </div>
             {% endif %}
-
+    {% endblock %}
 
 
         {% block body %}{% endblock %}
