@@ -7,8 +7,21 @@
 
         <header id="menu">
                 <h2>Your tickets in one place:</h2>
-        </header>
 
+        </header>
+        <div class="progress">
+            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                Tickets Completed: 40%
+            </div>
+        </div>
+
+        {#<div class="progress">#}
+            {#<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"#}
+                 {#aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:{{ progressbarValue }}%">#}
+                {#{{ progressbarText }}#}
+            {#</div>#}
+        {#</div>#}
         <hr>
         {% if upcomingTickets|length<1 %}
             <header id="menu"><h3>No upcoming Tickets!</h3></header><br><br>
@@ -30,7 +43,11 @@
                             <dd>{{ ticket.name }}</dd>
 
                             <dt>Desc:</dt>
-                            <dd>{{ ticket.description }}</dd>
+                            {% if ticket.description == "" %}
+                                <dd><i>(none given)</i></dd>
+                            {% else %}
+                                <dd>{{ ticket.description }}</dd>
+                            {% endif %}
 
                             {#<dt>Creation:</dt>#}
                             {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}

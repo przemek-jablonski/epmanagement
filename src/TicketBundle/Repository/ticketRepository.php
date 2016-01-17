@@ -14,6 +14,42 @@ use UserBundle\Entity\user;
 class ticketRepository extends EntityRepository {
 
 
+    public function getTicketsUpcoming(user $user){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.userCreated = :inputUsername')
+            ->andWhere('t.done = 0')
+            ->andWhere('t.dateDeadline > :now')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->setParameter('inputUsername', $user->getId())
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
+    }
+
+    public function getTicketsOverdue(user $user) {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.userCreated = :inputUsername')
+            ->andWhere('t.done = 0')
+            ->andWhere('t.dateDeadline <= :now')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->setParameter('inputUsername', $user->getId())
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
+    }
+
+    public function getTicketsDone(user $user) {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.userCreated = :inputUsername')
+            ->andWhere('t.done = 1')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->setParameter('inputUsername', $user->getId())
+            ->getQuery()
+            ->execute();
+    }
+
+
+
     public function findAllTicketsAdmin(){
         return $this->createQueryBuilder('t')
             ->addOrderBy('t.dateDeadline', 'ASC')

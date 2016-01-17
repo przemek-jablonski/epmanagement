@@ -15,7 +15,7 @@
                     {{ ticket.name }}
                 </h1>
 
-                <hr><hr>
+                <hr>
                 <dl>
                     <dt>description:</dt>
                     <dd>{{ ticket.description }}</dd>
@@ -29,7 +29,7 @@
                     <dt>Reporter:</dt>
                     <dd>{{ ticket.userCreated.username }} </dd>
 
-                    <dt>Assignee:</dt>
+                    {#<dt>Assignee:</dt>#}
                     {#<dd>{{ ticket.userAssigned }} </dd>#}
 
                     <dt>Project:</dt>
@@ -39,27 +39,68 @@
                     <dd>{{ ticket.numberPoints }} </dd>
 
                     <dt>Status:</dt>
-                    <dd>{{ ticket.done }} </dd>
+                    <dd>
+                        {{ ticket.doneString }}
+                    </dd>
 
-                    <br><hr><hr>
+                    <br>
 
-                    <a href = "{{ path('ticketcrud_index') }}"
-                       button type="button" class="btn btn-success pull-left">COMPLETED</a>
+                    {% if ticket.doneBoolean %}
+                        <a href = "{{ path('ticketcrud_uncompletion', {id: ticket.id}) }}"
+                           button type="button" class="btn btn-danger pull-right js-completion-toggle">SET IN PROGRESS</a>
+                    {% else %}
+                        <a href = "{{ path('ticketcrud_completion', {id: ticket.id}) }}"
+                           button type="button" class="btn btn-success pull-right js-completion-toggle">SET COMPLETED</a>
+                    {% endif %}
 
-                    <a href = "{{ path('ticketcrud_index') }}"
-                       button type="button" class="btn btn-danger pull-left">REJECTED</a>
 
-
-
+                    <hr>
+                    {#<a href = "{{ path('ticketcrud_index') }}"#}
+                       {#button type="button" class="btn btn-danger pull-left">REJECTED</a>#}
                     <a href = "{{ path('ticketcrud_delete', {'id': ticket.id}) }}"
                        button type="button" class="btn btn-warning pull-right">delete</a>
                     <a href = "{{ path('ticketcrud_edit', {'id': ticket.id}) }}"
                        button type="button" class="btn btn-warning pull-right">edit</a>
                     <a href = "{{ path('ticketcrud_index') }}"
                        button type="button" class="btn btn-primary pull-right">back</a>
+                    <hr>
                 </dl>
             </section>
         </article>
     </section>
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        $(document).ready(function() {
+            $('.js-completion-toggle').on('click', function(e) {
+                e.preventDefault();
+
+                var $anchor = $(this);
+                var url = $(this).attr('href')+'.json';
+
+                $.post(url, null, function(data) {
+                    if (data.completed) {
+                        var message = 'Task is completed. Congratulations!';
+                        $anchor.after('<span class="label label-success pull-right">&#10004; '+message+'</span>');
+                    } else {
+                        var message = 'Task is in progress now. Be sure to meet deadline!';
+                        $anchor.after('<span class="label label-danger pull-right">&#10004; '+message+'</span>');
+                    }
+                    $anchor.hide();
+                });
+            });
+        });
+
+
+    </script>
+
+{% endblock %}
+
+
+
+
+
 

@@ -27,3 +27,16 @@ ticketcrud_delete:
     path:     /{id}/delete
     defaults: { _controller: "TicketBundle:ticket:delete" }
     methods:  [GET,POST]
+
+ticketcrud_completion:
+    pattern:  /{id}/complete.{format}
+    defaults: { _controller: "TicketBundle:ticket:completion", format: html }
+    requirements:
+        format: json
+
+ticketcrud_uncompletion:
+    pattern:  /{id}/uncomplete.{format}
+    defaults: { _controller: "TicketBundle:ticket:unCompletion", format: html }
+    requirements:
+        format: json
+

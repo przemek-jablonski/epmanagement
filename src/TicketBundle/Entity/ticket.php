@@ -32,9 +32,9 @@ class ticket {
     /**
      * @var bool $done
      *
-     * @ORM\Column(name="done", type="boolean")
+     * @ORM\Column(name="done", type="boolean", nullable=true, options={"default" = 0})
      */
-    private $done = false;
+    private $done;
 
 
     /**
@@ -286,9 +286,17 @@ class ticket {
     }
 
     /**
-     * @return boolean
+     * @return string
      */
-    public function isDone()
+    public function isDoneString()
+    {
+        if($this->done == true)
+            return "task was completed.";
+        else
+            return "task in progress";
+    }
+
+    public function isDoneBoolean()
     {
         return $this->done;
     }

@@ -6,6 +6,7 @@ use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Session\Session;
 use TicketBundle\Entity\ticket;
 use TicketBundle\Form\ticketType;
@@ -24,7 +25,6 @@ class ticketController extends Controller
 
     /**
      * Lists all ticket entities.
-     *
      */
     public function indexAction() {
         /** @var EntityManager $em */
@@ -34,15 +34,13 @@ class ticketController extends Controller
         $repository = $em->getRepository('TicketBundle:ticket');
 
 
-        if($this->get('security.context')->isGranted('ROLE_ADMIN'))
-        {
+        if($this->get('security.context')->isGranted('ROLE_ADMIN')) {
             $upcomingTicketsVisible = $repository->findAllTicketsAdmin();
             $overdueTicketsVisible = $repository->findAllTicketsAdmin();
         } else {
             $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
             $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
         }
-
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'helper' => (new NavbarHelperElements())->createHelperIndex(),
@@ -52,13 +50,11 @@ class ticketController extends Controller
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'
         ));
-
     }
 
     public function firstIndexAction() {
         $this->session = new Session();
         $this->session->getFlashBag()->add('flash_success', 'Good to see you back! See all of your tickets below...');
-
 //        /** @var EntityManager $em */
 //        $em = $this->getDoctrine()->getManager();
 //
@@ -78,18 +74,22 @@ class ticketController extends Controller
 //            'overdueTickets' => $overdueTicketsVisible,
 //            'controllerAction' => 'indexAction()'
 //        ));
-
         return $this->indexAction();
     }
+
+
+
+//    public function sortedAction() {
+//    }
+
+
+
 
     public function showAction($slug) {
 
         $manager = $this->getDoctrine()->getManager();
-
         $ticket = $manager->getRepository('TicketBundle:ticket')->findOneBy(array('slug' => $slug));
-
         $form = $this->createDeleteForm($ticket);
-
         if(!$ticket) throw $this->createNotFoundException('Unable to find given ticket');
 
 
@@ -215,5 +215,47 @@ class ticketController extends Controller
         ;
     }
 
+
+
+
+    public function completionAction($id, $format) {
+        $manager = $this->getDoctrine()->getManager();
+        $ticket = $manager->getRepository('TicketBundle:ticket')->find($id);
+
+        if(!$ticket) throw $this->createNotFoundException('ticket not found :c');
+
+        $ticket->setDone(1);
+
+        $manager->persist($ticket);
+        $manager->flush();
+
+        return $this->completionSet($ticket, $format);
+
+    }
+
+    public function unCompletionAction($id, $format) {
+        $manager = $this->getDoctrine()->getManager();
+        $ticket = $manager->getRepository('TicketBundle:ticket')->find($id);
+
+        if(!$ticket) throw $this->createNotFoundException('ticket not found :c');
+
+        $ticket->setDone(false);
+        $manager->persist($ticket);
+        $manager->flush();
+
+        return $this->completionSet($ticket, $format);
+
+    }
+
+    public function completionSet(ticket $ticket, $format) {
+
+        if ($format == 'json') {
+            $json = array(
+                'completed' => $ticket->isDoneBoolean()
+            );
+            return new JsonResponse($json);
+        } else
+            return $this->redirect($this->generateUrl('ticketcrud_show', array( 'slug' => $ticket->getSlug())));
+    }
 
 }
