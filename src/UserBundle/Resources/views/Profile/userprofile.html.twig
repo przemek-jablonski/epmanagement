@@ -23,16 +23,61 @@
                     <dd>{{ user.email }}</dd>
 
                     <dt>tickets overall:</dt>
-                    <dd>TODO</dd>
+                    <dd>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar progress-bar-striped" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{ overallPercent }}%">
+                                {{ overallText }}
+                            </div>
+                        </div>
+                    </dd>
 
                     <dt>tickets active:</dt>
-                    <dd>TODO</dd>
+                    <dd>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{ activePercent }}%">
+                                {{ activeText }}
+                            </div>
+                        </div>
+                        {{ activeText }}
+                        <br><br>
+                        {% for ticket in activeArray %}
+                            <p>{{ ticket.dateCreation | date("Y-m-d")}}: {{ ticket.name }}, {{ ticket.numberPoints }} points</p>
+                        {% endfor %}
+                    </dd>
 
                     <dt>tickets done:</dt>
-                    <dd>TODO</dd>
+                    <dd>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{ donePercent }}%">
+                                {{ doneText }}
+                            </div>
+                        </div>
+                        {{ doneText }}
+                        <br><br>
+                        {% for ticket in doneArray %}
+                            <p>{{ ticket.dateCreation | date("Y-m-d")}}: {{ ticket.name }}, {{ ticket.numberPoints }} points</p>
+                        {% endfor %}
+                    </dd>
 
                     <dt>tickets overdue:</dt>
-                    <dd>TODO</dd>
+                    <dd>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+                                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{ overduePercent }}%">
+                                {{ overdueText }}
+                            </div>
+                        </div>
+                        {{ overdueText }}
+                        <br><br>
+                        {% for ticket in overdueArray %}
+                            <p>{{ ticket.dateCreation | date("Y-m-d")}}: {{ ticket.name }}, {{ ticket.numberPoints }} points</p>
+                        {% endfor %}
+                    </dd>
+
+
                 </dl>
             </section>
         </article>

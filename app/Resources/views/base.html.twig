@@ -12,6 +12,12 @@
                 <link rel="stylesheet" href= "{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}">
             {% endblock %}
 
+
+        {% block javascripts %}
+            {#<script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>#}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        {% endblock %}
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -167,10 +173,6 @@
 
     {% endblock %}
 
-    {% block javascripts %}
-        {#<script type="text/javascript" src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.js') }}"></script>#}
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    {% endblock %}
 
 
     </body>
