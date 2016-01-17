@@ -41,11 +41,15 @@
                             <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
                         </h3>
                         <dl>
-                            {#<dt>Ticket ID:</dt>#}
-                            {#<dd>{{ ticket.id }}</dd>#}
 
-                            <dt>Name:</dt>
-                            <dd>{{ ticket.name }}</dd>
+                            <dt>Status:</dt>
+                            <dd>To be done</dd>
+
+                            <dt>Deadline:</dt>
+                            <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                            <dt>Project:</dt>
+                            <dd>{{ ticket.project }}</dd>
 
                             <dt>Desc:</dt>
                             {% if ticket.description is null %}
@@ -54,27 +58,8 @@
                                 <dd>{{ ticket.description }}</dd>
                             {% endif %}
 
-                            {#<dt>Creation:</dt>#}
-                            {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
-
-                            <dt>Deadline:</dt>
-                            <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
-
-                            <dt>Reporter:</dt>
+                            <dt>Owner:</dt>
                             <dd>{{ ticket.userCreated.username }}</dd>
-
-                            {#<dt>Assignee:</dt>#}
-                            {#<dd>{{ ticket.userAssigned }}</dd>#}
-
-                            <dt>Project:</dt>
-                            <dd>{{ ticket.project }}</dd>
-
-                            {#<dt>Sprint:</dt>#}
-                            {#<dd>{{ ticket.numberPoints }}</dd>#}
-
-                            <dt>Status:</dt>
-                            {#<dd>{{ ticket.status }}</dd>#}
-
                         </dl>
                         </div>
                     </section>
@@ -101,36 +86,56 @@
                                 {#<dt>Ticket ID:</dt>#}
                                 {#<dd>{{ ticket.id }}</dd>#}
 
-                                <dt>Name:</dt>
-                                <dd>{{ ticket.name }}</dd>
+                                {#<dt>Name:</dt>#}
+                                {#<dd>{{ ticket.name }}</dd>#}
 
-                                <dt>Desc:</dt>
-                                {% if ticket.description is null %}
-                                    <dd><i>(none given)</i></dd>
-                                {% else %}
-                                    <dd>{{ ticket.description }}</dd>
-                                {% endif %}
+                                {#<dt>Desc:</dt>#}
+                                {#{% if ticket.description is null %}#}
+                                    {#<dd><i>(none given)</i></dd>#}
+                                {#{% else %}#}
+                                    {#<dd>{{ ticket.description }}</dd>#}
+                                {#{% endif %}#}
 
                                 {#<dt>Creation:</dt>#}
                                 {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
 
-                                <dt>Deadline:</dt>
-                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+                                {#<dt>Deadline:</dt>#}
+                                {#<dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>#}
 
-                                <dt>Reporter:</dt>
-                                <dd>{{ ticket.userCreated.username }}</dd>
+                                {#<dt>Reporter:</dt>#}
+                                {#<dd>{{ ticket.userCreated.username }}</dd>#}
 
                                 {#<dt>Assignee:</dt>#}
                                 {#<dd>{{ ticket.userAssigned }}</dd>#}
 
-                                <dt>Project:</dt>
-                                <dd>{{ ticket.project }}</dd>
+                                {#<dt>Project:</dt>#}
+                                {#<dd>{{ ticket.project }}</dd>#}
 
                                 {#<dt>Sprint:</dt>#}
                                 {#<dd>{{ ticket.numberPoints }}</dd>#}
 
                                 {#<dt>Status:</dt>#}
                                 {#<dd>{{ ticket.status }}</dd>#}
+{#                                                                                                  #}
+
+                                <dt>Status:</dt>
+                                <dd>Overdue / needs attention</dd>
+
+                                <dt>Deadline:</dt>
+                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                                <dt>Project:</dt>
+                                <dd>{{ ticket.project }}</dd>
+
+                                <dt>Desc:</dt>
+                                {% if ticket.description is null %}
+                                    <dd>(none given)</dd>
+                                {% else %}
+                                    <dd>{{ ticket.description }}</dd>
+                                {% endif %}
+
+                                <dt>Owner:</dt>
+                                <dd>{{ ticket.userCreated.username }}</dd>
 
                             </dl>
                         </div>
@@ -155,11 +160,14 @@
                                 <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
                             </h3>
                             <dl>
-                                {#<dt>Ticket ID:</dt>#}
-                                {#<dd>{{ ticket.id }}</dd>#}
+                                <dt>Status:</dt>
+                                <dd>Overdue / needs attention</dd>
 
-                                <dt>Name:</dt>
-                                <dd>{{ ticket.name }}</dd>
+                                <dt>Deadline:</dt>
+                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                                <dt>Project:</dt>
+                                <dd>{{ ticket.project }}</dd>
 
                                 <dt>Desc:</dt>
                                 {% if ticket.description is null %}
@@ -168,26 +176,8 @@
                                     <dd>{{ ticket.description }}</dd>
                                 {% endif %}
 
-                                {#<dt>Creation:</dt>#}
-                                {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
-
-                                <dt>Deadline:</dt>
-                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
-
-                                <dt>Reporter:</dt>
+                                <dt>Owner:</dt>
                                 <dd>{{ ticket.userCreated.username }}</dd>
-
-                                {#<dt>Assignee:</dt>#}
-                                {#<dd>{{ ticket.userAssigned }}</dd>#}
-
-                                <dt>Project:</dt>
-                                <dd>{{ ticket.project }}</dd>
-
-                                {#<dt>Sprint:</dt>#}
-                                {#<dd>{{ ticket.numberPoints }}</dd>#}
-
-                                <dt>Status:</dt>
-                                {#<dd>{{ ticket.status }}</dd>#}
 
                             </dl>
                         </div>

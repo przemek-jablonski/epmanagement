@@ -35,11 +35,10 @@ class ticketController extends Controller
 
 
         if($this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            $upcomingTicketsVisible = $repository->findAllTicketsAdmin();
-            $overdueTicketsVisible = $repository->findAllTicketsAdmin();
+            $upcomingTicketsVisible = $repository->getTicketsUpcomingAdmin();
+            $overdueTicketsVisible = $repository->getTicketsOverdueAdmin();
+            $doneTicketsVisible = $repository->getTicketsDoneAdmin();
         } else {
-//            $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
-//            $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
             $upcomingTicketsVisible = $repository->getTicketsUpcoming($this->getUser());
             $overdueTicketsVisible = $repository->getTicketsOverdue($this->getUser());
             $doneTicketsVisible = $repository->getTicketsDone($this->getUser());

@@ -4,7 +4,7 @@
     <list default="true" id="134b6c3f-3951-45d1-9511-ad8c0bbd7fd7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php" afterPath="$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" afterPath="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" />
     </list>
     <ignored path="epmanagement.iws" />
@@ -84,23 +84,23 @@
           <file leaf-file-name="ticketController.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5720721">
-                  <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+                <state vertical-scroll-proportion="0.3524775">
+                  <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
                   <folding>
                     <element signature="e#43#74#0#PHP" expanded="true" />
-                    <element signature="e#2259#2296#0#PHP" expanded="true" />
-                    <element signature="e#3074#3113#0#PHP" expanded="false" />
-                    <element signature="e#4239#4260#1#PHP" expanded="true" />
-                    <element signature="e#4469#4505#0#PHP" expanded="true" />
-                    <element signature="e#5640#5657#0#PHP" expanded="true" />
-                    <element signature="e#6001#6036#0#PHP" expanded="true" />
-                    <element signature="e#7136#7153#0#PHP" expanded="true" />
-                    <element signature="e#7509#7545#0#PHP" expanded="true" />
-                    <element signature="e#8387#8405#1#PHP" expanded="true" />
-                    <element signature="e#8739#8758#0#PHP" expanded="true" />
-                    <element signature="e#9022#9043#1#PHP" expanded="true" />
-                    <element signature="e#9450#9471#1#PHP" expanded="true" />
-                    <element signature="e#10035#10052#0#PHP" expanded="true" />
+                    <element signature="e#2140#2177#0#PHP" expanded="true" />
+                    <element signature="e#2955#2994#0#PHP" expanded="false" />
+                    <element signature="e#4120#4141#1#PHP" expanded="true" />
+                    <element signature="e#4350#4386#0#PHP" expanded="true" />
+                    <element signature="e#5521#5538#0#PHP" expanded="true" />
+                    <element signature="e#5882#5917#0#PHP" expanded="true" />
+                    <element signature="e#7017#7034#0#PHP" expanded="true" />
+                    <element signature="e#7390#7426#0#PHP" expanded="true" />
+                    <element signature="e#8268#8286#1#PHP" expanded="true" />
+                    <element signature="e#8620#8639#0#PHP" expanded="true" />
+                    <element signature="e#8903#8924#1#PHP" expanded="true" />
+                    <element signature="e#9331#9352#1#PHP" expanded="true" />
+                    <element signature="e#9916#9933#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -125,8 +125,8 @@
           <file leaf-file-name="ticketRepository.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.478261">
-                  <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+                <state vertical-scroll-proportion="-29.391304">
+                  <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
                   <folding>
                     <element signature="e#43#77#0#PHP" expanded="true" />
                   </folding>
@@ -147,8 +147,8 @@
           <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.8490991">
-                  <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.5754505">
+                  <caret line="168" column="43" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                   </folding>
@@ -221,8 +221,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/show.html.twig" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php" />
-        <option value="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php" />
+        <option value="$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php" />
         <option value="$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig" />
       </list>
     </option>
@@ -1695,6 +1695,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.173913">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Entity/ticket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.347826">
@@ -1705,51 +1713,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5720721">
-          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding>
-            <element signature="e#43#74#0#PHP" expanded="true" />
-            <element signature="e#2259#2296#0#PHP" expanded="true" />
-            <element signature="e#3074#3113#0#PHP" expanded="false" />
-            <element signature="e#4239#4260#1#PHP" expanded="true" />
-            <element signature="e#4469#4505#0#PHP" expanded="true" />
-            <element signature="e#5640#5657#0#PHP" expanded="true" />
-            <element signature="e#6001#6036#0#PHP" expanded="true" />
-            <element signature="e#7136#7153#0#PHP" expanded="true" />
-            <element signature="e#7509#7545#0#PHP" expanded="true" />
-            <element signature="e#8387#8405#1#PHP" expanded="true" />
-            <element signature="e#8739#8758#0#PHP" expanded="true" />
-            <element signature="e#9022#9043#1#PHP" expanded="true" />
-            <element signature="e#9450#9471#1#PHP" expanded="true" />
-            <element signature="e#10035#10052#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Form/ticketType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.173913">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Repository/ticketRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.478261">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+        <state vertical-scroll-proportion="-29.391304">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
           <folding>
             <element signature="e#43#77#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/TicketBundle/Controller/ticketController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3524775">
+          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+          <folding>
+            <element signature="e#43#74#0#PHP" expanded="true" />
+            <element signature="e#2140#2177#0#PHP" expanded="true" />
+            <element signature="e#2955#2994#0#PHP" expanded="false" />
+            <element signature="e#4120#4141#1#PHP" expanded="true" />
+            <element signature="e#4350#4386#0#PHP" expanded="true" />
+            <element signature="e#5521#5538#0#PHP" expanded="true" />
+            <element signature="e#5882#5917#0#PHP" expanded="true" />
+            <element signature="e#7017#7034#0#PHP" expanded="true" />
+            <element signature="e#7390#7426#0#PHP" expanded="true" />
+            <element signature="e#8268#8286#1#PHP" expanded="true" />
+            <element signature="e#8620#8639#0#PHP" expanded="true" />
+            <element signature="e#8903#8924#1#PHP" expanded="true" />
+            <element signature="e#9331#9352#1#PHP" expanded="true" />
+            <element signature="e#9916#9933#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TicketBundle/Resources/views/Ticket/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8490991">
-          <caret line="149" column="38" selection-start-line="149" selection-start-column="38" selection-end-line="149" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.5754505">
+          <caret line="168" column="43" selection-start-line="168" selection-start-column="43" selection-end-line="168" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>

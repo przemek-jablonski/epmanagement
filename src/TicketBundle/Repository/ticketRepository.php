@@ -49,6 +49,35 @@ class ticketRepository extends EntityRepository {
     }
 
 
+    public function getTicketsUpcomingAdmin(){
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.done = 0')
+            ->andWhere('t.dateDeadline > :now')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
+    }
+
+    public function getTicketsOverdueAdmin() {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.done = 0')
+            ->andWhere('t.dateDeadline <= :now')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->setParameter('now', new \DateTime())
+            ->getQuery()
+            ->execute();
+    }
+
+    public function getTicketsDoneAdmin() {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.done = 1')
+            ->addOrderBy('t.dateDeadline', 'ASC')
+            ->getQuery()
+            ->execute();
+    }
+
+
 
     public function findAllTicketsAdmin(){
         return $this->createQueryBuilder('t')
