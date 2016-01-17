@@ -9,25 +9,30 @@
                 <h2>Your tickets in one place:</h2>
 
         </header>
+        {#<div class="progress">#}
+            {#<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"#}
+                 {#aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">#}
+                {#Tickets Completed: 40%#}
+            {#</div>#}
+        {#</div>#}
+
         <div class="progress">
             <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
-                 aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                Tickets Completed: 40%
+                 aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:{{ progressbarValue }}%">
+                {{ progressbarText }}
             </div>
         </div>
 
-        {#<div class="progress">#}
-            {#<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"#}
-                 {#aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:{{ progressbarValue }}%">#}
-                {#{{ progressbarText }}#}
-            {#</div>#}
-        {#</div>#}
         <hr>
+
+
         {% if upcomingTickets|length<1 %}
-            <header id="menu"><h3>No upcoming Tickets!</h3></header><br><br>
+
+            <h3>No upcoming Tickets!</h3><br><br>
 
         {% else %}
-            <header id="menu"><h3>Upcoming Tickets:</h3></header>
+
+            <h3>Upcoming Tickets:</h3><br><br>
             {% for ticket in upcomingTickets %}
                 <article>
                     <section>
@@ -43,7 +48,7 @@
                             <dd>{{ ticket.name }}</dd>
 
                             <dt>Desc:</dt>
-                            {% if ticket.description == "" %}
+                            {% if ticket.description is null %}
                                 <dd><i>(none given)</i></dd>
                             {% else %}
                                 <dd>{{ ticket.description }}</dd>
@@ -77,12 +82,14 @@
             {% endfor %}
         {% endif %}
 
-
+        <hr>
         {% if overdueTickets|length<1 %}
-            <header id="menu"><h3>No overdue Tickets!</h3></header><br><br>
+
+            <h3>No overdue Tickets!</h3><br><br>
+
         {% else %}
-            <header id="menu"><h3>Overdue Tickets:</h3><br><br></header>
-            <br><hr>
+
+            <h3>Overdue Tickets:</h3><br><br>
             {% for ticket in overdueTickets %}
                 <article>
                     <section>
@@ -98,7 +105,11 @@
                                 <dd>{{ ticket.name }}</dd>
 
                                 <dt>Desc:</dt>
-                                <dd>{{ ticket.description }}</dd>
+                                {% if ticket.description is null %}
+                                    <dd><i>(none given)</i></dd>
+                                {% else %}
+                                    <dd>{{ ticket.description }}</dd>
+                                {% endif %}
 
                                 {#<dt>Creation:</dt>#}
                                 {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
@@ -127,5 +138,64 @@
                 </article>
             {% endfor %}
         {% endif %}
+
+        <hr>
+        {% if completedTickets|length<1 %}
+
+            <h3>No completed Tickets!</h3><br><br>
+
+        {% else %}
+
+            <h3>Completed Tickets:</h3><br><br>
+            {% for ticket in completedTickets %}
+                <article>
+                    <section>
+                        <div class="alert alert-success fade in">
+                            <h3>
+                                <a href="{{ path('ticketcrud_show', {'slug': ticket.slug}) }}">{{ ticket.name }}</a>
+                            </h3>
+                            <dl>
+                                {#<dt>Ticket ID:</dt>#}
+                                {#<dd>{{ ticket.id }}</dd>#}
+
+                                <dt>Name:</dt>
+                                <dd>{{ ticket.name }}</dd>
+
+                                <dt>Desc:</dt>
+                                {% if ticket.description is null %}
+                                    <dd><i>(none given)</i></dd>
+                                {% else %}
+                                    <dd>{{ ticket.description }}</dd>
+                                {% endif %}
+
+                                {#<dt>Creation:</dt>#}
+                                {#<dd>{{ ticket.dateCreation | date("Y-m-d H:i:s") }}</dd>#}
+
+                                <dt>Deadline:</dt>
+                                <dd> {{ ticket.dateDeadline | date("Y-m-d H:i:s") }} </dd>
+
+                                <dt>Reporter:</dt>
+                                <dd>{{ ticket.userCreated.username }}</dd>
+
+                                {#<dt>Assignee:</dt>#}
+                                {#<dd>{{ ticket.userAssigned }}</dd>#}
+
+                                <dt>Project:</dt>
+                                <dd>{{ ticket.project }}</dd>
+
+                                {#<dt>Sprint:</dt>#}
+                                {#<dd>{{ ticket.numberPoints }}</dd>#}
+
+                                <dt>Status:</dt>
+                                {#<dd>{{ ticket.status }}</dd>#}
+
+                            </dl>
+                        </div>
+                    </section>
+                </article>
+            {% endfor %}
+        {% endif %}
+
+
     </section>
 {% endblock %}

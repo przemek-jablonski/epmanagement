@@ -38,14 +38,32 @@ class ticketController extends Controller
             $upcomingTicketsVisible = $repository->findAllTicketsAdmin();
             $overdueTicketsVisible = $repository->findAllTicketsAdmin();
         } else {
-            $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
-            $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+//            $upcomingTicketsVisible = $repository->findAllUpcomingTicketsUser($this->getUser());
+//            $overdueTicketsVisible = $repository->findAllOverdueTicketsUser($this->getUser());
+            $upcomingTicketsVisible = $repository->getTicketsUpcoming($this->getUser());
+            $overdueTicketsVisible = $repository->getTicketsOverdue($this->getUser());
+            $doneTicketsVisible = $repository->getTicketsDone($this->getUser());
         }
+
+        $doneCount = count($doneTicketsVisible);
+        $upcomingCount = count($upcomingTicketsVisible);
+        $overdueCount = count($overdueTicketsVisible);
+
+        if(($doneCount + $upcomingCount + $overdueCount) == 0)
+            $percent = 0;
+        else
+            $percent = ( $doneCount / ($doneCount + $upcomingCount + $overdueCount) ) * 100;
+
+        $progressbarText = "Tickets Completed: " . number_format($percent, 0) . "% (" . $doneCount . "/" . ($doneCount + $upcomingCount + $overdueCount) . ")";
+
 
         return $this->render('TicketBundle:Ticket:index.html.twig', array(
             'helper' => (new NavbarHelperElements())->createHelperIndex(),
             'navbarLeft' => (new BootstrapNavbar())->createNavbarIndexLeft(),
             'navbarRight' => (new BootstrapNavbar())->createNavbarStandardRight(),
+            'progressbarText' => $progressbarText,
+            'progressbarValue' => $percent,
+            'completedTickets' => $doneTicketsVisible,
             'upcomingTickets' => $upcomingTicketsVisible,
             'overdueTickets' => $overdueTicketsVisible,
             'controllerAction' => 'indexAction()'

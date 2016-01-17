@@ -32,9 +32,9 @@ class ticket {
     /**
      * @var bool $done
      *
-     * @ORM\Column(name="done", type="boolean", nullable=true, options={"default" = 0})
+     * @ORM\Column(name="done", type="boolean")
      */
-    private $done;
+    private $done = false;
 
 
     /**
