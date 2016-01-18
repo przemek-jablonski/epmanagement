@@ -33,12 +33,6 @@
                             {{ form_widget(edit_form.dateDeadline) }}
                         </dd>
 
-                        <dt>Assignee:</dt>
-                        <dd>
-                            {#{{ form_errors(edit_form.userAssigned) }}#}
-                            {#{{ form_widget(edit_form.userAssigned) }}#}
-                        </dd>
-
                         <dt>Project:</dt>
                         <dd>
                             {{ form_errors(edit_form.project) }}
@@ -51,12 +45,6 @@
                             {{ form_widget(edit_form.numberPoints) }}
                         </dd>
 
-                        <dt>Status:</dt>
-                        <dd>
-                            {#{{ form_errors(edit_form.status) }}#}
-                            {#{{ form_widget(edit_form.status) }}#}
-                            TODO
-                        </dd>
                     </dl>
 
                 {{ form_end(edit_form) }}

@@ -30,7 +30,9 @@ class UserController extends Controller {
 
 
         if($this->get('security.context')->isGranted('ROLE_ADMIN')) {
-            
+            $upcomingTickets = $repository->getTicketsUpcomingAdmin();
+            $overdueTickets = $repository->getTicketsOverdueAdmin();
+            $doneTickets = $repository->getTicketsDoneAdmin();
         } else {
             $upcomingTickets = $repository->getTicketsUpcoming($this->getUser());
             $overdueTickets = $repository->getTicketsOverdue($this->getUser());
